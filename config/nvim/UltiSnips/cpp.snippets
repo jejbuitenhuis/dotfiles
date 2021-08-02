@@ -1,0 +1,39 @@
+# Default .h file layout
+snippet h ".h file layout" b
+#ifndef ${1:FILE_NAME}_H
+#define $1_H
+
+$0
+
+#endif /* $1_H */
+endsnippet
+
+# Default class layout
+snippet class "default class layout" b
+class ${1:ClassName}
+{
+	public:
+		$1();
+		$0
+
+	private:
+};
+endsnippet
+
+# Main function
+snippet main "main function" b
+int main(int argc, char* argv[]) {
+	$0
+
+	return 0;
+}
+endsnippet
+
+# Main function without arguments
+snippet emain "main function without arguments" b
+int main() {
+	$0
+
+	return 0;
+}
+endsnippet

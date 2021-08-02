@@ -1,0 +1,67 @@
+# Size function
+snippet size "size(width, height)" b
+size(${1:width}, ${0:height});
+endsnippet
+
+# Class definition
+snippet class "Create a new class" b
+class ${1:ClassName} {
+	$1($0) {
+		
+	}
+}
+endsnippet
+
+# override toString method
+snippet tostring "Override the toString method" b
+@Override
+String toString() {
+	return "$0";
+}
+endsnippet
+
+# Switch case skeleton
+snippet switch "Switch case skeleton" b
+switch (${1:varaible}) {
+	case ${2:value}: {
+		$0
+		break;
+	}
+}
+endsnippet
+
+# Switch case skeleton with default
+snippet switchd "Switch case skeleton with default" b
+switch (${1:varaible}) {
+	case ${2:value}: {
+		$3
+		break;
+	}
+	default: {
+		$0
+		break;
+	}
+}
+endsnippet
+
+# Case for within switch
+snippet case "Case for within switch" b
+case ${1:value}: {
+	$0
+	break;
+}
+endsnippet
+
+# For loop
+snippet for "For loop with an iterator variable" b
+for (${1:int} ${2:i} = ${3:0}; $2 < ${4:variable}; $2++) {
+	$0
+}
+endsnippet
+
+# Foreach loop
+snippet foreach "Foreach loop" b
+for (${1:Type} ${2:varible}: ${3:array}) {
+	$0
+}
+endsnippet

@@ -1,0 +1,285 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+background = #4c4e73
+foreground = #ffffff
+foreground_alt = #000000
+primary = #D9B89C
+primary_alt = #A8ADFF
+alert = #ff6966
+
+[characters]
+round-right = ""
+round-left = ""
+round-open = ""
+round-close = ""
+
+item-start = "%{T2}%{F#ff0000}%{F-}%{B#ff0000}%{T-}W %{B-}%{B#4c4e73}"
+item-end = "%{B-}%{T2}%{F#4c4e73}%{F-}%{T-}"
+
+[bar/top]
+monitor = ${env:MONITOR}
+width = 100%
+height = 50
+fixed-center = true
+dpi = 192
+
+background = #0000
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-top-size = 40
+border-left-size = 40
+border-bottom-size = 0
+border-right-size = 40
+border-color = #0000
+
+font-0 = FiraCode Nerd Font Mono:style=Regular:size=10;6
+font-1 = FiraCode Nerd Font Mono:style=Regular:size=15;6
+font-2 = FiraCode Nerd Font Mono:style=Regular:size=15;7
+
+modules-left = wifi wifi_speed
+modules-center = 
+modules-right = time
+
+module-margin = 1
+
+bottom = false
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/bottom]
+monitor = ${env:MONITOR}
+width = 100%
+height = 50
+fixed-center = true
+dpi = 192
+
+background = #0000
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-top-size = 0
+border-left-size = 40
+border-bottom-size = 40
+border-right-size = 40
+border-color = #0000
+
+font-0 = FiraCode Nerd Font Mono:style=Regular:size=10;6
+font-1 = FiraCode Nerd Font Mono:style=Regular:size=15;6
+font-2 = FiraCode Nerd Font Mono:style=Regular:size=15;7
+
+modules-left = i3 mode
+modules-center = spotify
+modules-right = ram temperature volume brightness battery
+
+; tray-position = right
+; tray-background = ${colors.background}
+
+module-margin = 1
+
+bottom = true
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/bottom_alt]
+monitor = ${env:MONITOR}
+width = 100%
+height = 30
+fixed-center = true
+dpi = 96
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = FiraCode Nerd Font Mono:style=Regular:size=10;2
+font-1 = FiraCode Nerd Font Mono:style=Regular:size=15;2
+font-2 = FiraCode Nerd Font Mono:style=Regular:size=15;2
+
+modules-left = i3_alt
+modules-center =
+modules-right = time_alt
+
+padding-left = 2
+padding-right = 2
+module-margin = 1
+
+bottom = true
+
+[module/wifi]
+type = internal/network
+interface = wlp0s20f3
+
+format-connected = <label-connected>
+
+label-connected =    "%{T2}%{F#869fd9}%{F-}%{T3}%{B#869fd9} %{B-}%{T-}%{B#4c4e73} %essid%%{B-}%{B#2a2940}%{T2}%{F#4c4e73}%{F-}%{T-} %local_ip%%{B-}%{T2}%{F#2a2940}%{F-}%{T-}"
+label-disconnected = "%{T2}%{F#869fd9}%{F-}%{T3}%{B#869fd9} %{B-}%{T-}%{B#4c4e73}%{F#cccccc} N/A%{F-}%{B-}%{T2}%{F#4c4e73}%{F-}%{T-}"
+
+[module/wifi_speed]
+type = internal/network
+interface = wlp0s20f3
+
+label-connected =    "%{T2}%{F#93BFAE}%{F-}%{T3}%{B#93BFAE} %{B-}%{T-}%{B#4c4e73}  %upspeed%%{B-}%{B#2a2940}%{T2}%{F#4c4e73}%{F-}%{T-}  %downspeed%%{B-}%{T2}%{F#2a2940}%{F-}%{T-}"
+
+[module/keyboard_mode]
+type = custom/script
+
+exec = "cat $HOME/.cache/xkb-curr-$DISPLAY"
+
+label = "%{T2}%{F#61afef}%{F-}%{T3}%{B#61afef} %{B-}%{T-}%{B#4c4e73} %output%%{B-}%{T2}%{F#4c4e73}%{F-}%{T-}"
+
+interval = 0.5
+
+[module/keyboard_mode_alt]
+type = custom/script
+
+exec = "cat $HOME/.cache/xkb-curr-$DISPLAY"
+
+interval = 0.5
+
+[module/i3]
+type = internal/i3
+
+index-sort = true
+
+format = "%{T2}%{F#61afef}%{F-}%{T3}%{B#61afef} %{B-}%{T-}%{B#4c4e73}<label-state>%{B-}%{T2}%{F#4c4e73}%{F-}%{T-}"
+
+label-focused-foreground = ${colors.primary}
+label-visible-foreground = ${colors.primary_alt}
+label-urgent-foreground = ${colors.alert} 
+
+[module/i3_alt]
+type = internal/i3
+
+index-sort = true
+
+format = "<label-state> <label-mode>"
+
+label-focused-foreground = ${colors.primary}
+label-visible-foreground = ${colors.primary_alt}
+label-urgent-foreground = ${colors.alert}
+
+label-mode-padding = 1
+label-mode-foreground = ${colors.foreground_alt}
+label-mode-background = ${colors.primary}
+
+[module/mode]
+type = internal/i3
+
+format = "<label-mode>"
+
+label-mode = "%{T2}%{F#56b6c2}%{F-}%{T3}%{B#56b6c2} %{B-}%{T-}%{B#4c4e73} %mode%%{B-}%{T2}%{F#4c4e73}%{F-}%{T-}"
+
+[module/current-window]
+type = internal/xwindow
+
+; first is full title, second is cut off title
+label = "%{T2}%{F#d99e91}%{F-}%{T3}%{B#d99e91} %{B-}%{T-}%{B#4c4e73} %title:0:150:…%%{B-}%{T2}%{F#4c4e73}%{F-}%{T-}"
+; label = "%{T2}%{F#d99e91}%{F-}%{T3}%{B#d99e91} %{B-}%{T-}%{B#4c4e73} %output:0:40:…%%{B-}%{T2}%{F#4c4e73}%{F-}%{T-}"
+
+[module/spotify]
+type = custom/script
+
+label = "%output%"
+
+; exec = python3 ~/.config/polybar/scripts/spotify_status.py -t 100 -q -f "%{T2}%{F#9EBF7E}%{F-}%{B#9EBF7E}%{T-}S %{B-}%{B#4c4e73} [song]%{B-}%{B#2a2940}%{T2}%{F#4c4e73}%{F-}%{T-} [artist]%{B-}%{T2}%{F#2a2940}%{F-}%{T-}"
+exec = python3 ~/.config/polybar/scripts/spotify.py --dbus spotify --type 'Mountain Fuji'
+
+interval = 1
+
+[module/volume]
+type = internal/pulseaudio
+
+interval = 1
+
+format-volume = <label-volume>
+
+label-volume = "%{T2}%{F#86CAD9}%{F-}%{T3}%{B#86CAD9} %{B-}%{T-}%{B#4c4e73} %percentage%%%{B-}%{T2}%{F#4c4e73}%{F-}%{T-}"
+label-muted = "%{T2}%{F#86CAD9}%{F-}%{T3}%{B#86CAD9} %{B-}%{T-}%{B#4c4e73}%{F#cccccc} MUTED%{F-}%{B-}%{T2}%{F#4c4e73}%{F-}%{T-}"
+
+[module/brightness]
+type = custom/script
+
+exec = printf '%.*f\n' 0 $(sudo light -G)
+
+interval = 1
+
+label = "%{T2}%{F#D9AD86}%{F-}%{T3}%{B#D9AD86} %{B-}%{T-}%{B#4c4e73} %output%%%{B-}%{T2}%{F#4c4e73}%{F-}%{T-}"
+
+[module/battery]
+type = internal/battery
+
+battery = BAT0
+adapter = AC
+
+full-at = 79
+
+poll-interval = 5
+
+format-charging = "%{T2}%{F#c678dd}%{F-}%{T3}%{B#c678dd} %{B-}%{T-}%{B#4c4e73} <label-charging>%{B-}%{B#2a2940}%{T2}%{F#4c4e73}%{F-}%{T-} %{B-}%{T2}%{F#2a2940}%{F-}%{T-}"
+format-discharging = "%{T2}%{F#c678dd}%{F-}%{T3}%{B#c678dd}<ramp-capacity> %{B-}%{T-}%{B#4c4e73} <label-discharging>%{B-}%{B#2a2940}%{T2}%{F#4c4e73}%{F-}%{T-} %{B-}%{T2}%{F#2a2940}%{F-}%{T-}"
+format-full = "%{T2}%{F#c678dd}%{F-}%{T3}%{B#c678dd}<ramp-capacity> %{B-}%{T-}%{B#4c4e73} <label-full>%{B-}%{T2}%{F#4c4e73}%{F-}%{T-}"
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+[module/ram]
+type = internal/memory
+
+format = "<label>"
+
+label = "%{T2}%{F#e3a1bf}%{F-}%{T3}%{B#e3a1bf} %{B-}%{T-}%{B#4c4e73} %percentage_used%%%{B-}%{B#2a2940}%{T2}%{F#4c4e73}%{F-}%{T-} %percentage_swap_used%%%{B-}%{T2}%{F#2a2940}%{F-}%{T-}"
+
+[module/temperature]
+type = internal/temperature
+
+warn-temperature = 70
+
+label = "%{T2}%{F#9a86d9}%{F-}%{T3}%{B#9a86d9} %{B-}%{T-}%{B#4c4e73} %temperature-c%%{B-}%{T2}%{F#4c4e73}%{F-}%{T-}"
+
+label-warn = "%{T2}%{F#9a86d9}%{F-}%{T3}%{B#9a86d9} %{B-}%{T-}%{B#d9004f} %temperature-c%%{T2}%{B-}%{F#d9004f}%{F-}%{T-}"
+
+[module/time]
+type = internal/date
+
+interval = 1
+
+date = %a %d %b
+time = %H:%M:%S
+
+label = "%{T2}%{F#e06c75}%{F-}%{T3}%{B#e06c75} %{B-}%{T-}%{B#4c4e73} %time%%{B-}%{B#2a2940}%{T2}%{F#4c4e73}%{F-}%{T-} %date%%{B-}%{T2}%{F#2a2940}%{F-}%{T-}"
+
+[module/time_alt]
+type = internal/date
+
+interval = 1
+
+time = %H:%M:%S
+
+label = "%time%"
+

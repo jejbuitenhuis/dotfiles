@@ -1,0 +1,70 @@
+* {
+	color-bg: #252526;
+	color-bg-alt: #25252699;
+	color-fg: #9694a6;
+	color-fg-darker: #686673;
+	color-selected: #f2994b;
+
+	spacing: 0;
+	background-color: @color-bg-alt;
+	color: @color-fg;
+}
+
+window {
+	width: 100%;
+	anchor: south;
+	location: south;
+	orientation: vertical;
+	children: [ message, mainbox ];
+}
+
+message {
+	padding: 0.6em 1em;
+}
+
+mainbox {
+	orientation: horizontal;
+	children: [ inputbar, listview ];
+}
+
+inputbar {
+	orientation: horizontal;
+	padding: 0.6em 1em;
+	children: [ prompt, textbox, entry ];
+}
+
+prompt {
+	horizontal-align: 1;
+}
+
+textbox {
+	text-color: @color-fg-darker;
+	str: ":";
+}
+
+entry {
+	expand: false;
+	width: 10em;
+}
+
+listview {
+	layout: horizontal;
+	scrollbar: false;
+}
+
+element {
+	padding: 0.6em 0.5em;
+}
+
+element.selected {
+	color: @color-selected;
+}
+
+element-icon {
+	size: 128;
+	vertical-align: 0.5;
+}
+
+element-text {
+	vertical-align: 0.5;
+}

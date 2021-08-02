@@ -1,0 +1,53 @@
+* {
+	background-color: #4c4e73;
+	color: #ffffff;
+}
+
+window {
+	width: 100%;
+	anchor: north west;
+	location: north west;
+	margin: 40px;
+	border-radius: 5.8em;
+	children: [ mainbox ];
+}
+
+mainbox {
+	orientation: horizontal;
+	children: [ inputbar, listview ];
+}
+
+inputbar {
+	padding: 9px 30px;
+	children: [ prompt, textbox, entry ];
+}
+
+entry {
+	expand: false;
+	width: 10em;
+}
+
+textbox {
+	str: ":";
+}
+
+listview {
+	layout: horizontal;
+	/* lines: 10; */
+	background-color: #a8adff;
+	color: #000000;
+}
+
+element {
+	padding: 10px 0.5em;
+	background-color: inherit;
+	color: inherit;
+}
+
+element selected {
+	background-color: #d9b89c;
+}
+
+element-icon {
+	padding: 0;
+}

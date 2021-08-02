@@ -1,0 +1,82 @@
+* {
+	color-bg: #4c4e73;
+	color-bg-dark: #2a2940;
+	color-selected: #d9b89c;
+
+	spacing: 0;
+	background-color: @color-bg;
+	color: #ffffff;
+}
+
+window {
+	width: 30%;
+	/* padding: 0 1em 1em 1em; */
+	padding: 0 1em;
+	border-radius: 0 0 0.3em 0.3em;
+	anchor: north;
+	location: north;
+	children: [ mainbox ];
+}
+
+mainbox {
+	orientation: vertical;
+	children: [ message, inputbar, listview, mode-switcher ];
+}
+
+message {
+	padding: 0.5em 1em 0;
+	background-color: @color-bg-dark;
+}
+
+textbox {
+	background-color: @color-bg-dark;
+}
+
+inputbar {
+	background-color: @color-bg-dark;
+	border-radius: 0 0 0.3em 0.3em;
+	margin: 0 0 1em;
+	children: [ entry ];
+}
+
+entry {
+	padding: 0.5em 1em;
+	background-color: @color-bg-dark;
+}
+
+listview {
+	fixed-height: false;
+	/* hacky way to get bottom-borders, excluding the last item */
+	spacing: 0.1em;
+	margin: 1em 0;
+	background-color: @color-bg-dark;
+}
+
+element {
+	padding: 0.5em 1em;
+	background-color: @color-bg;
+	border-color: @color-bg-dark;
+}
+
+element selected {
+	background-color: @color-selected;
+	color: #000000;
+}
+
+mode-switcher {
+	margin: 1em 0 0;
+	border: 0;
+	background-color: @color-bg-dark;
+	border-radius: 0.3em 0.3em 0 0;
+}
+
+button {
+	padding: 0.5em 1em;
+	background-color: @color-bg-dark;
+	border-radius: 0.3em 0.3em 0 0;
+}
+
+button selected.normal {
+	background-color: @color-selected;
+	color: #000000;
+}

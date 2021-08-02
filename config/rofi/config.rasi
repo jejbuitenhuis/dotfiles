@@ -1,0 +1,31 @@
+configuration {
+	/* Mountain Fuji floating box */
+	/* width: 40; */
+	/* theme: "Mountain_Fuji_2"; */
+
+	/* Mountain Fuji top bar */
+	/* width: 100; */
+	/* theme: "Mountain_Fuji_3"; */
+
+	/* Mountain Fuji big top bar */
+	/* width: 30; */
+	/* theme: "Mountain_Fuji_4"; */
+
+	/* Sunrise throuh Trees */
+	/* width: 100; */
+	/* theme: "Sunrise_through_Trees_1"; */
+
+	/* Flower with Leaves */
+	/* width: 30; */
+	/* theme: "Flower_with_Leaves_1"; */
+
+	/* Flower with Leaves with bar on the left */
+	width: 30;
+	theme: "Flower_with_Leaves_2";
+
+	font: "Ubuntu Mono 12";
+	sort: true;
+	show-icons: true;
+	kb-accept-custom: "Shift+Return";
+	kb-accept-alt: "Control+Return";
+}

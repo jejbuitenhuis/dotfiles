@@ -1,0 +1,47 @@
+* {
+	color-bg: #0d0d0d;
+	color-fg: #ffe3ff;
+	color-selected: #f2a2e5;
+
+	background-color: @color-bg;
+	color: @color-fg;
+}
+
+window {
+	children: [ mainbox ];
+}
+
+mainbox {
+	spacing: 0em;
+	children: [ message, inputbar, listview ];
+}
+
+message {
+	padding: 0.75em;
+}
+
+inputbar {
+	border: 0 0 0 0.25em;
+	children: [ entry ];
+}
+
+entry {
+	expand: false;
+	width: 30%;
+	padding: 1em;
+	background-color: @color-bg;
+}
+
+listview {
+	lines: 8;
+	spacing: 0em;
+}
+
+element {
+	border: 0 0 0 0.25em;
+	padding: 0.75em;
+}
+
+element selected {
+	border-color: @color-selected;
+}

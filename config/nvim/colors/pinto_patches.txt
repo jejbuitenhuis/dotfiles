@@ -1,0 +1,9 @@
+" change misc.CursorLine to this:
+hi CursorLine guisp=NONE guifg=NONE guibg=color ctermfg=num ctermbg=num gui=NONE cterm=NONE
+
+" add under major.ErrorMsg:
+hi ErrorMsg   guisp=NONE guifg=#000000 guibg=#ff6966 ctermfg=16  ctermbg=203 gui=NONE      cterm=NONE
+
+" add these at the bottom (space and enter characters):
+hi Whitespace guisp=NONE guifg=color guibg=NONE ctermfg=num ctermbg=NONE gui=NONE cterm=NONE
+hi NonText    guisp=NONE guifg=color guibg=NONE ctermfg=num ctermbg=NONE gui=NONE cterm=NONE

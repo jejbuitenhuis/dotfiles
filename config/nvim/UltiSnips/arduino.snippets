@@ -1,0 +1,96 @@
+snippet template "Arduino template with info comment and setup and loop function" b
+/**
+ * ${1:project description}
+ * Author: ${2:author}
+ * Date: `date +%d-%m-%Y`
+ */
+
+void setup()
+{
+	$4
+}
+
+void loop()
+{
+	$0
+}
+endsnippet
+
+snippet info "Info comment with project description, author name and date"
+/**
+ * ${1:project description}
+ * Author: ${2:author}
+ * Date: `date +%d-%m-%Y`
+ */
+endsnippet
+
+snippet pm "pinMode(pin, mode)" b
+pinMode(${1:pin}, ${2:mode});$0
+endsnippet
+
+snippet dw "digitalWrite(pin, value)" b
+digitalWrite(${1:pin}, ${2:value});$0
+endsnippet
+
+snippet aw "analogWrite(pin, value)" b
+analogWrite(${1:pin}, ${2:value});$0
+endsnippet
+
+snippet map "map(x, fromLow, fromHigh, toLow, toHigh)"
+map(${1:x}, ${2:fromLow}, ${3:fromHigh}, ${4:toLow}, ${5:toHigh});$0
+endsnippet
+
+snippet switch "Switch case skeleton" b
+switch (${1:varaible})
+{
+	case ${2:value}:
+	{
+		$0
+	} break;
+}
+endsnippet
+
+# Switch case skeleton with default
+snippet switchd "Switch case skeleton with default" b
+switch (${1:varaible})
+{
+	case ${2:value}:
+	{
+		$3
+	} break;
+	default:
+	{
+		$0
+	} break;
+}
+endsnippet
+
+# Case for within switch
+snippet case "Case for within switch" b
+case ${1:value}:
+{
+	$0
+} break;
+endsnippet
+
+snippet for "For loop with an iterator variable" b
+for (${1:int} ${2:i} = ${3:0}; $2 < ${4:variable}; ++$2)
+{
+	$0
+}
+endsnippet
+
+# statemachine
+snippet state "State variable" b
+const ${1:unsigned int} ${2:STATEMACHINE}_STATE_${3:NAME} = ${4:num};$0
+endsnippet
+
+snippet "state (\S)" "State variable" b
+const ${1:unsigned int} ${2:STATEMACHINE}_STATE_`!p snip.rv = match.group(1).upper()` = ${3:num};$0
+endsnippet
+
+snippet statef "State entry, do and exit functions" b
+void ${1:statemachine}_${2:state}_Entry(${3:parameters}) {}
+void $1_$2_Do($3) {}
+void $1_$2_Exit($3) {}$0
+endsnippet
