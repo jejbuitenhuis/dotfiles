@@ -117,3 +117,8 @@ namespace
 wattroff
 wattron
 chrono
+strlen
+cstring
+fstream
+stylesheet
+viewport
