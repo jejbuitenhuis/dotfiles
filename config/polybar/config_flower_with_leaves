@@ -144,40 +144,30 @@ interval = 1
 label = "%{T2}%{F#829399}%{F-}%{T-} %output%%"
 
 [module/battery]
-type = internal/battery
+type = custom/script
 
-battery = BAT0
-adapter = AC
+exec = python3 ~/.config/polybar/scripts/battery.py
 
-full-at = 79
+internal = 5
 
-poll-interval = 5
+; type = internal/battery
 
-format-charging = "%{T3}%{F#829399}<ramp-capacity>%{F-}%{T-} <label-charging> "
-format-discharging = "%{T3}%{F#829399}<ramp-capacity>%{F-}%{T-} <label-discharging> "
-format-full = "%{T3}%{F#829399}<ramp-capacity>%{F-}%{T-} <label-full>"
+; battery = BAT0
+; adapter = AC
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+; full-at = 79
 
-[module/ram]
-type = internal/memory
+; poll-interval = 5
 
-format = "<label>"
+; format-charging = "%{T3}%{F#829399}%{F-}%{T-} <label-charging>"
+; format-discharging = "%{T3}%{F#829399}<ramp-capacity>%{F-}%{T-} <label-discharging>"
+; format-full = "%{T3}%{F#829399}<ramp-capacity>%{F-}%{T-} <label-full>"
 
-label = "%{T2}%{F#e3a1bf}%{F-}%{T3}%{B#e3a1bf} %{B-}%{T-}%{B#4c4e73} %percentage_used%%%{B-}%{B#2a2940}%{T2}%{F#4c4e73}%{F-}%{T-} %percentage_swap_used%%%{B-}%{T2}%{F#2a2940}%{F-}%{T-}"
-
-[module/temperature]
-type = internal/temperature
-
-warn-temperature = 70
-
-label = "%{T2}%{F#9a86d9}%{F-}%{T3}%{B#9a86d9} %{B-}%{T-}%{B#4c4e73} %temperature-c%%{B-}%{T2}%{F#4c4e73}%{F-}%{T-}"
-
-label-warn = "%{T2}%{F#9a86d9}%{F-}%{T3}%{B#9a86d9} %{B-}%{T-}%{B#d9004f} %temperature-c%%{T2}%{B-}%{F#d9004f}%{F-}%{T-}"
+; ramp-capacity-0 = 
+; ramp-capacity-1 = 
+; ramp-capacity-2 = 
+; ramp-capacity-3 = 
+; ramp-capacity-4 = 
 
 [module/time]
 type = internal/date
