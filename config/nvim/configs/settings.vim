@@ -147,6 +147,19 @@ let g:closetag_emptyTags_caseSensitive = 1
 " vue bundle
 let g:vim_vue_plugin_use_scss = 1
 let g:vim_vue_plugin_highlight_vue_attr = 1
+let g:vim_vue_plugin_config = {
+	\'syntax': {
+	\   'template': ['html'],
+	\   'script': ['javascript'],
+	\   'style': ['scss'],
+	\},
+	\'full_syntax': [],
+	\'initial_indent': [],
+	\'attribute': 1,
+	\'keyword': 1,
+	\'foldexpr': 0,
+	\'debug': 0,
+	\}
 
 " syntastic
 set statusline+=%#warningmsg#
