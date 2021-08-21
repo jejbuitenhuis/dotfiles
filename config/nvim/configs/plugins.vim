@@ -2,18 +2,16 @@ call plug#begin( stdpath('data') . '/plugged' )
 " Plug 'vim-airline/vim-airline'											" bar
 " Plug 'vim-airline/vim-airline-themes'									" bar thema's
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase'  }				" Color visualizer (installed GO)
-Plug 'scrooloose/nerdtree'												" File explorer
 Plug 'preservim/nerdcommenter'											" Comment stuff
 Plug 'mattn/emmet-vim'													" Emmet
 Plug 'unblevable/quick-scope'											" Key highlight (f, F)
-Plug 'tpope/vim-characterize'											" Better character info (decimal, octal & hex)
 Plug 'vim-scripts/loremipsum'											" Generate lorem ipsum
 Plug 'chun-yang/auto-pairs'												" Autocomplete brackets and stuff
 Plug 'tpope/vim-surround'												" Surrounding characters made easy
 Plug 'embear/vim-localvimrc'											" Local vimrc
 Plug 'ryanoasis/vim-devicons'											" Icons
 Plug 'mhinz/vim-startify'												" Fancy stuff on startup
-Plug 'kamykn/spelunker.vim'												" Spellchecker
+Plug 'kamykn/spelunker.vim'												" Spell checker
 Plug 'vim-scripts/SyntaxAttr.vim'										" Check what attribute is used for color scheme
 Plug 'mboughaba/i3config.vim'											" i3 config color coding
 Plug 'shougo/deol.nvim'													" Console
@@ -26,7 +24,6 @@ Plug 'noahfrederick/vim-skeleton'										" File templates
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }						" fzf in vim
 Plug 'junegunn/fzf.vim'
 Plug 'machakann/vim-highlightedyank'									" Highlight yanked text
-Plug 'iqxd/vim-mine-sweeping'											" Mine sweeper game
 Plug 'godlygeek/tabular', { 'for': 'markdown' } 						" Align text on certain characters. Only used with vim-markdown
 Plug 'vim-scripts/DoxygenToolkit.vim', { 'for': 'cpp' }					" Generate c++ documentation comment template
 
