@@ -2,7 +2,7 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # If you come from bash you might have to change your $PATH.
@@ -75,7 +75,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(fzf-tab git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -131,17 +131,25 @@ PATH="$PATH:/home/joram/Installers/processing-3.5.4/"
 PATH="$PATH:/home/joram/bin"
 PATH="$SPICETIFY_INSTALL:$PATH"
 
-bindkey '^f' fuzzyCd
+# Customize fzf-tab
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -A --color=always $realpath'
+zstyle ':fzf-tab:complete:nvim:*' fzf-preview 'batcat -p --color=always $realpath'
 
-# https://unix.stackexchange.com/a/289933/430375
-zle -N fuzzyCd{,}
-function fuzzyCd() {
-	cd $HOME && cd "$(find -type d | fzf --preview="tree -L 1 {}")"
+# source ~/.zsh-plugins/fzf-tab-completion/zsh/fzf-zsh-completion.sh
+# bindkey '^I' fzf_completion
+
+# zsh autosuggest settings
+bindkey '^ ' autosuggest-accept
+bindkey '\e[20;5~' autosuggest-execute
+
+# fh - repeat history
+fh() {
+	print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
 }
 
 function wallpaper() {
-    feh --no-fehbg --bg-fill $1
+	feh --no-fehbg --bg-fill $1
 }
 
 # Startup
-neofetch
+# neofetch
