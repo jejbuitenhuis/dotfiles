@@ -91,7 +91,7 @@ call s:hi("SpecialChar", { "fg": s:colors.lighter.green }) " special character i
 call s:hi("Tag", {}) " you can use CTRL-] on this
 call s:hi("Delimiter", {}) " character that needs attention
 call s:hi("SpecialComment", { "fg": s:colors.gray }) " special thing inside a comment
-call s:hi("Debug", {}) " debuggin statements
+call s:hi("Debug", {}) " debugging statements
 call s:hi("Underlined", { "gui": "underline", "c": "underline" }) " text that stands out, HTML links
 call s:hi("Ignore", {}) " left blank, hidden
 call s:hi("Error", { "bg": s:colors.red }) " any erroneous construct
