@@ -1,31 +1,59 @@
 call plug#begin( stdpath('data') . '/plugged' )
-" Plug 'vim-airline/vim-airline'											" bar
-" Plug 'vim-airline/vim-airline-themes'									" bar thema's
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase'  }				" Color visualizer (installed GO)
-Plug 'preservim/nerdcommenter'											" Comment stuff
-Plug 'mattn/emmet-vim'													" Emmet
-Plug 'unblevable/quick-scope'											" Key highlight (f, F)
-Plug 'vim-scripts/loremipsum'											" Generate lorem ipsum
-Plug 'chun-yang/auto-pairs'												" Autocomplete brackets and stuff
-Plug 'tpope/vim-surround'												" Surrounding characters made easy
-Plug 'embear/vim-localvimrc'											" Local vimrc
-Plug 'ryanoasis/vim-devicons'											" Icons
-Plug 'mhinz/vim-startify'												" Fancy stuff on startup
-Plug 'kamykn/spelunker.vim'												" Spell checker
-Plug 'vim-scripts/SyntaxAttr.vim'										" Check what attribute is used for color scheme
-Plug 'mboughaba/i3config.vim'											" i3 config color coding
-Plug 'shougo/deol.nvim'													" Console
-Plug 'alvan/vim-closetag'												" Autoclose html tags
-Plug 'valloric/matchtagalways'											" Highlight html matching tags
-Plug 'AndrewRadev/splitjoin.vim'										" Switching between single-line statement and multi-line statement
-Plug 'scrooloose/syntastic'												" Syntax checker and linter
-Plug 'triglav/vim-visual-increment'										" Better number and letter increment
-Plug 'noahfrederick/vim-skeleton'										" File templates
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }						" fzf in vim
+" bar
+" Plug 'vim-airline/vim-airline'
+" bar thema's
+" Plug 'vim-airline/vim-airline-themes'
+" Color visualizer (installed GO)
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase'  }
+" Comment stuff
+Plug 'preservim/nerdcommenter'
+" Emmet
+Plug 'mattn/emmet-vim'
+" Key highlight (f, F)
+Plug 'unblevable/quick-scope'
+" Generate lorem ipsum
+Plug 'vim-scripts/loremipsum'
+" Autocomplete brackets and stuff
+Plug 'chun-yang/auto-pairs'
+" Surrounding characters made easy
+Plug 'tpope/vim-surround'
+" Local vimrc
+Plug 'embear/vim-localvimrc'
+" Icons
+Plug 'ryanoasis/vim-devicons'
+" Fancy stuff on startup
+Plug 'mhinz/vim-startify'
+" Spell checker
+Plug 'kamykn/spelunker.vim'
+" Check what attribute is used for color scheme
+Plug 'vim-scripts/SyntaxAttr.vim'
+" i3 config color coding
+Plug 'mboughaba/i3config.vim'
+" Console
+Plug 'shougo/deol.nvim'
+" Autoclose html tags
+Plug 'alvan/vim-closetag'
+" Highlight html matching tags
+Plug 'valloric/matchtagalways'
+" Switching between single-line statement and multi-line statement
+Plug 'AndrewRadev/splitjoin.vim'
+" Syntax checker and linter
+Plug 'scrooloose/syntastic'
+" Better number and letter increment
+Plug 'triglav/vim-visual-increment'
+" File templates
+Plug 'noahfrederick/vim-skeleton'
+" fzf in vim
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'machakann/vim-highlightedyank'									" Highlight yanked text
-Plug 'godlygeek/tabular', { 'for': 'markdown' } 						" Align text on certain characters. Only used with vim-markdown
-Plug 'vim-scripts/DoxygenToolkit.vim', { 'for': 'cpp' }					" Generate c++ documentation comment template
+" Highlight yanked text
+Plug 'machakann/vim-highlightedyank'
+" Align text on certain characters. Only used with vim-markdown
+Plug 'godlygeek/tabular', { 'for': 'markdown' }
+" Generate c++ documentation comment template
+Plug 'vim-scripts/DoxygenToolkit.vim', { 'for': 'cpp' }
+" Show indentation lines when indented with spaces
+Plug 'Yggdroot/indentLine'
 
 " Code completion and snippets
 " Plug 'valloric/youcompleteme', { 'do': 'python3 ./install.py --all' }
