@@ -134,9 +134,11 @@ let g:Hexokinase_highlighters = [ 'backgroundfull' ]
 let g:Hexokinase_optInPatters = 'full_hex,triple_hex,rgb,rgba,hsl,hsla,colour_names'
 
 " Indent line
-let g:indentLine_color_gui = '#3B4048'
-" let g:indentLine_color_gui = '#656899' " Mountain Fuji
-let g:indentLine_char = '┊'
+" let g:indentLine_setColors = 0
+let g:indentLine_setConceal = 0
+let g:indentLine_defaultGroup = 'Comment'
+let g:indentLine_char = '⎸'
+" let g:indentLine_char = '⍿'
 
 " javascript bundle
 let g:javascript_plugin_jsdoc = 1
@@ -149,9 +151,9 @@ let g:vim_vue_plugin_use_scss = 1
 let g:vim_vue_plugin_highlight_vue_attr = 1
 let g:vim_vue_plugin_config = {
 	\'syntax': {
-	\   'template': ['html'],
-	\   'script': ['javascript'],
-	\   'style': ['scss'],
+	\	'template': ['html'],
+	\	'script': ['javascript'],
+	\	'style': ['scss'],
 	\},
 	\'full_syntax': [],
 	\'initial_indent': [],
@@ -162,9 +164,8 @@ let g:vim_vue_plugin_config = {
 	\}
 
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+let g:syntastic_error_symbol = ""
+let g:syntastic_warning_symbol = ""
 
 " skeleton
 let g:skeleton_template_dir = '~/.config/nvim/templates'
@@ -207,6 +208,9 @@ let g:clang_library_path = '/usr/lib/llvm-10/lib'
 " UltiSnips
 let g:UltiSnipsExpandTrigger = "<c-e>"
 
+" emmet
+let g:user_emmet_leader_key = '<c-,>'
+
 " i3config
 aug i3config_ft_detection
 	au!
@@ -222,6 +226,3 @@ let g:vim_markdown_math = 1
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
-
-" emmet
-let g:user_emmet_leader_key = '<C-e>'
