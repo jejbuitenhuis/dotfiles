@@ -1,0 +1,133 @@
+snippet template "Creates a default tex file" b
+\documentclass[12pt, a4paper]{report}
+
+\usepackage{xcolor}
+
+\definecolor{code_bg}{HTML}{191919}
+\definecolor{code_fg}{HTML}{d1d1d1}
+\definecolor{fg_lighter}{HTML}{262626}
+\definecolor{color_blue}{HTML}{3476a5}
+
+\usepackage[font={color=fg_lighter, footnotesize}]{caption}
+
+\usepackage{minted}
+
+\usemintedstyle{native}
+
+\usepackage{tcolorbox}
+
+\tcbuselibrary{listings, minted, skins}
+\tcbset{listing engine=minted}
+
+\renewcommand{\listingscaption}{Code}
+
+\usepackage{fullpage}
+
+\usepackage{titlesec}
+
+\titleformat{\chapter}[block]
+	{ \normalfont\bfseries\huge }{\thechapter}{20pt}{\huge}
+\titlespacing*{\chapter}{0pt}{-25pt}{15pt}
+
+\usepackage[dutch]{babel}
+
+\usepackage[
+	colorlinks=true,
+	allcolors=black,
+	urlcolor=color_blue,
+	pdftitle={${1:title}} ]{hyperref}
+
+\usepackage{apacite}
+
+\usepackage{parskip}
+
+\title{$1}
+\author{$2}
+\date{`date +"%d-%m-%Y"`}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+$0
+
+\bibliographystyle{apacite}
+\bibliography{${3:references}.bib}
+
+\end{document}
+endsnippet
+
+snippet codeinline "Create a new inline code style" b
+\newmintinline{${1:language}}{bgcolor=code_bg}$0
+endsnippet
+
+snippet codei "Inline code block"
+\\${1:language}inline{$2}$0
+endsnippet
+
+snippet codelist "Create a new codelisting" b
+\newtcblisting{codelst:${1:language}}{
+	listing only,
+	minted language=$1,
+	colback=code_bg,
+	coltext=code_fg,
+	enhanced,
+	frame hidden,
+	minted options={
+		tabsize=4,
+		breaklines
+	}
+}$0
+endsnippet
+
+snippet code "Code block" b
+\begin{codelst:${1:language}}
+$2
+\end{codelst:$1}$0
+endsnippet
+
+snippet codec "Code block with caption" b
+\begin{listing}[!ht]
+\begin{codelst:${1:language}}
+$4
+\end{codelst:$1}
+
+\caption{${2:caption}}
+\label{code:${3:reference}}
+\end{listing}$0
+endsnippet
+
+snippet images "Images setup" b
+\usepackage{graphicx}
+\setkeys{Gin}{width=\textwidth}
+\graphicspath{ {${1:path}} }
+
+\usepackage{wrapfig}$0
+endsnippet
+
+snippet imaget "Image within text" b
+\begin{wrapfigure}{${1:r}}{${2:0.45}\textwidth}
+	\centering
+	\includegraphics[width=$2\textwidth]{${3:image}}
+\end{wrapfigure}$0
+endsnippet
+
+snippet imagec "Image with a caption" b
+\begin{figure}[h]
+	\centering
+	\includegraphics{${1:image}}
+	\caption{${2:Caption}}
+	\label{fig:${3:label}}
+\end{figure}$0
+endsnippet
+
+snippet "\\begin\{(\w+)\}" "multiline begin{} / end{}" rbA
+\begin{`!p snip.rv = match.group(1)`}
+$0
+\end{`!p snip.rv = match.group(1)`}
+endsnippet
+
+snippet "(?<!^)\\begin\{(\w+)\}" "inline begin{} / end{}" riA
+\begin{`!p snip.rv = match.group(1)`} $1 \end{`!p snip.rv = match.group(1)`}$0
+endsnippet

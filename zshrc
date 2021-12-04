@@ -123,6 +123,7 @@ export SPICETIFY_INSTALL="/home/joram/spicetify-cli"
 export MANPAGER='nvim +Man!'
 export MYSQL_PS1="\u@\h [\d]> "
 export EDITOR='nvim'
+export ANDROID_SDK_ROOT="/home/joram/Android/Sdk/"
 
 # Path stuff
 PATH="$PATH:/home/joram/scripts/"
@@ -130,10 +131,13 @@ PATH=$PATH:/usr/local/go/bin
 PATH="$PATH:/home/joram/Installers/processing-3.5.4/"
 PATH="$PATH:/home/joram/bin"
 PATH="$SPICETIFY_INSTALL:$PATH"
+PATH="$PATH:/usr/share/texlive/"
+PATH="$PATH:/home/joram/Android/Sdk/platform-tools/"
 
 # Customize fzf-tab
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -A --color=always $realpath'
 zstyle ':fzf-tab:complete:nvim:*' fzf-preview 'batcat -p --color=always $realpath'
+_comp_options+=(globdots)
 
 # source ~/.zsh-plugins/fzf-tab-completion/zsh/fzf-zsh-completion.sh
 # bindkey '^I' fzf_completion

@@ -131,7 +131,7 @@ interval = 1
 format-volume = <label-volume>
 
 label-volume = "%{T2}%{F#829399}%{F-}%{T-} %percentage%%"
-label-muted = "%{T2}%{F#829399}%{F-}%{T-} MUTED"
+label-muted = "%{T2}%{F#829399}%{T-} MUTED%{F-}"
 label-muted-foreground = ${colors.foreground_alt}
 
 [module/brightness]

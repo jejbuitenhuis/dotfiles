@@ -74,7 +74,7 @@ function GetTabLine()
 
 		if type(bufList) == type([])
 			for bufNum in bufList
-				if bufNum == bufnr('%')
+				if bufNum == currBufNr
 					let start .= '%#TabLineSel#'
 				else
 					let start .= '%#TabLine#'
@@ -83,18 +83,18 @@ function GetTabLine()
 				let start .= bufNum . ' ' . bufname(bufNum)
 			endfor
 
-			let winNum = tabpagewinnr(tabIndex)
-			if tabIndex == currTabPage
-				let end .= '%#TabLineSel#'
-			else
-				let end .= '%#TabLine#'
-			endif
-			let end .= bufname( bufList[winNum - 1] )
+			" let winNum = tabpagewinnr(tabIndex)
+			" if tabIndex == currTabPage
+				" let end .= '%#TabLineSel#'
+			" else
+				" let end .= '%#TabLine#'
+			" endif
+			" let end .= bufname( bufList[winNum - 1] )
 		endif
 	endfor
 
 	let start .= '%#TabLineFill#%='
-	let start .= end
+	" let start .= end
 
 	return start
 endfunction

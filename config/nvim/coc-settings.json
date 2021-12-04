@@ -28,6 +28,7 @@
 		"typeParameter": "\uf728",
 		"default": "\uf29c"
 	},
+	"diagnostic.refreshOnInsertMode": false,
 	"diagnostic.virtualText": true,
 	"diagnostic.errorSign": "",
 	"diagnostic.warningSign": "",

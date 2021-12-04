@@ -17,7 +17,7 @@ nmap <F5> :NERDTreeToggle<CR>
 " imap <c-l> <Right>
 
 " Show all buffers
-map <silent> <leader>l :ls<CR>
+" map <silent> <leader>l :ls<CR>
 
 " Toggle conceal level
 " map <leader>c :exec &conceallevel ? "set conceallevel=-" : "set conceallevel=2"<CR>
@@ -60,4 +60,7 @@ cnoremap <expr> <ESC> HighlightCursor(0, "\<lt>c-c>")
 " Move line up or down
 " nnoremap <silent> <leader>md :move '<-2<CR>gv-gv
 " nnoremap <silent> <leader>mu :move '>+1<CR>gv-gv
+
+nnoremap n nzz
+nnoremap N Nzz
 

@@ -50,6 +50,7 @@ set $prg_editor code
 set $prg_editor_alt i3-sensible-terminal -e nvim
 set $prg_files i3-sensible-terminal -e ranger
 set $prg_files_alt nautilus
+set $prg_email mailspring
 set $prg_screenshot flameshot full -c -p ~/Pictures/
 set $prg_screenshot_alt flameshot gui -p ~/Pictures/
 set $prg_screenshot_alt2 flameshot screen -c -p ~/Pictures/
@@ -293,17 +294,18 @@ bindsym $mod_alt+e exec --no-startup-id $prg_files
 bindsym $mod_alt+Shift+e exec --no-startup-id $prg_files_alt
 bindsym XF86Calculator exec --no-startup-id $prg_calculator
 bindsym $mod+Shift+Return exec --no-startup-id $prg_calculator
+bindsym $mod_alt+m exec --no-startup-id $prg_email
 bindsym $mod_alt+t exec --no-startup-id $prg_telegram
 
 # Lock screen
 bindsym Mod4+l exec $cmd_lock
 
-set $mode_system (l)ock, (r)eboot, (s)uspend, (S)hutdown
+set $mode_system (l) lock, (r) reboot, (s) suspend, (S) shutdown
 
 mode "$mode_system" {
 	bindsym e exec --no-startup-id $cmd_exit
 	bindsym l exec --no-startup-id $cmd_lock; mode "default"
-	bindsym r exec --no-startup-id $cmd_reboot; mode "defualt"
+	bindsym r exec --no-startup-id $cmd_reboot; mode "default"
 	bindsym s exec --no-startup-id $cmd_lock && $cmd_suspend; mode "default"
 	bindsym shift+s exec --no-startup-id $cmd_shutdown
 
@@ -366,7 +368,7 @@ mode "$mode_music" {
 
 bindsym $mod+m mode "$mode_music"
 
-set $mode_swap Press workspace number to swap withwindows
+set $mode_swap Press workspace number to swap windows with
 
 mode "$mode_swap" {
 	bindsym 1 exec --no-startup-id ~/.config/i3/scripts/workspace_swap.sh $ws1; mode "default"
@@ -381,8 +383,10 @@ mode "$mode_swap" {
 	bindsym 0 exec --no-startup-id ~/.config/i3/scripts/workspace_swap.sh $ws10; mode "default"
 
 	bindsym Escape mode "default"
-	bindsym $mod+m mode "default"
+	bindsym $mod+Shift+m mode "default"
 }
+
+bindsym $mod+Shift+m mode "$mode_swap"
 
 set $mode_screenshot (s)creenshot, (S)creen, (C+s)elect, (W+s)nipaste
 
@@ -421,8 +425,8 @@ exec_always --no-startup-id xkbcomp ~/.xkb/better_keys.xkb "$DISPLAY"
 # start pulseaudio
 exec --no-startup-id pulseaudio --start
 
-# start compton
-exec_always --no-startup-id ~/.config/i3/scripts/compton.sh
+# start picom
+exec_always --no-startup-id ~/.config/i3/scripts/picom.sh
 
 # Blue light stuff
 exec --no-startup-id redshift -b 1.0:0.75 -t 6500:3250

@@ -25,5 +25,4 @@ let ayucolor="dark"
 let g:embark_terminal_italics = 1
 
 colorscheme pct-flower-with-leaves
-" colorscheme onedark
 

@@ -61,8 +61,6 @@ let s:colors.cyan = "#8af2ec"
 " Syntax groups (`:h w18`) {{{
 call s:hi("Comment", { "fg": s:colors.gray, "gui": "italic", "c": "italic" }) " Any comment
 
-" TODO: Maybe change cyan to pink (if, else, for, etc) and pink to cyan (int,
-" long, etc)
 call s:hi("String", { "fg": s:colors.green }) " a string constant
 call s:hi("Character", { "fg": s:colors.lighter.green }) " a character constant
 call s:hi("Number", { "fg": s:colors.red }) " a number constant

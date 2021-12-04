@@ -13,7 +13,7 @@ with open("/sys/class/power_supply/BAT0/capacity", 'r') as file_capacity:
         if state == STATE_CHARGING:
             end_string += "%{T3}%{F#829399}%{F-}%{T-}"
         else:
-            if capacity < 10:
+            if capacity < 15:
                 end_string += "%{T3}%{F#829399}%{F-}%{T-}%{F#f99f9b}"
             elif capacity < 25:
                 end_string += "%{T3}%{F#829399}%{F-}%{T-}"

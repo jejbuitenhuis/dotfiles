@@ -75,6 +75,8 @@ Plug 'sophacles/vim-processing'
 Plug 'sudar/vim-arduino-syntax'
 Plug 'plasticboy/vim-markdown'
 Plug 'janiczek/vim-latte'
+Plug 'lervag/vimtex'
+Plug 'maxmellon/vim-jsx-pretty'
 
 " Color schemes
 Plug 'cocopon/iceberg.vim'

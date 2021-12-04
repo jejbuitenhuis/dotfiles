@@ -64,13 +64,15 @@ augroup wrap
 augroup END
 
 " Correct filetype for assembly
-autocmd BufNewFile,Bufread *.asm set ft=nasm
+autocmd BufNewFile,BufRead *.asm set ft=nasm
 autocmd FileType nasm call AssemblyConfig()
 
 function AssemblyConfig()
 	set noexpandtab tabstop=8 shiftwidth=8
 	retab
 endfunction
+
+autocmd BufNewFile,BufRead *.y set ft=y
 
 " Show folds in sidebar
 set foldcolumn=1
@@ -92,6 +94,7 @@ set cmdheight=2
 
 " Set leader
 let g:mapleader="\<Space>"
+let g:maplocalleader="\<Space>"
 
 " Mark trailing whitespace with an error color
 call matchadd('Error', '\s\+$')
@@ -209,12 +212,15 @@ let g:clang_library_path = '/usr/lib/llvm-10/lib'
 let g:UltiSnipsExpandTrigger = "<c-e>"
 
 " emmet
-let g:user_emmet_leader_key = '<c-,>'
+let g:user_emmet_leader_key = "<c-l>"
+let g:user_emmet_install_global = 0
+
+autocmd FileType html,vue EmmetInstall
 
 " i3config
 aug i3config_ft_detection
 	au!
-	au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+	au BufNewFile,BufRead .config/i3/config set filetype=i3config
 aug end
 
 " markdown

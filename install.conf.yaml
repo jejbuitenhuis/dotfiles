@@ -17,5 +17,5 @@
     ~/.config/rofi:
         path: config/rofi/
         create: true
-    ~/.config/compton.conf: config/compton.conf
+    ~/.config/picom.conf: config/picom.conf
 
