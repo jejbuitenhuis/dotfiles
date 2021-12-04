@@ -10,18 +10,7 @@ if [ -z "$1" ]; then
 fi
 
 modes=$1
-dpi=$($HOME/scripts/get_dpi)
-# current_layout=$(cat ~/.cache/xkb-curr-"$DISPLAY" || echo "")
 
-# if [[ $current_layout == "NORMAL" ]]; then
-	# ~/scripts/keyboard_mode_swapper "INSERT"
-# fi
-
-# echo $dpi $modes
-rofi -dpi $dpi \
-	-modi "$modes" \
+rofi -modi "$modes" \
 	-show "$(echo $modes | sed 's/[\,\#].*//')"
 
-# if [[ $current_layout == "NORMAL" ]]; then
-	# ~/scripts/keyboard_mode_swapper "NORMAL"
-# fi

@@ -26,10 +26,8 @@ for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
 
 	# sunrise_through_trees
 	[[ $m = "eDP-1" ]] && {
-		dpi=192
 		all_bars="top"
 	} || {
-		dpi=96
 		all_bars="top_alt"
 	}
 
@@ -44,7 +42,7 @@ for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
 
 	IFS="," read -r -a bars <<< "$all_bars"
 	for i in "${!bars[@]}"; do
-		MONITOR=$m DPI=$dpi polybar -c $configFile "${bars[i]}" >> "/tmp/polybar_${m}_${bars[i]}.log" 2>&1 &
+		MONITOR=$m polybar -c $configFile "${bars[i]}" >> "/tmp/polybar_${m}_${bars[i]}.log" 2>&1 &
 	done
 done
 
