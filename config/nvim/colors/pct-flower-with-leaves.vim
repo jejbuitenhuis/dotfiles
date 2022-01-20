@@ -148,6 +148,11 @@ call s:hi("WarningMsg", { "bg": s:colors.yellow })
 call s:hi("WildMenu", { "fg": s:colors.black, "bg": s:colors.pink })
 " }}}
 
+" Special highlighting groups {{{
+call s:hi("diffRemoved", { "fg": s:colors.red })
+call s:hi("diffAdded", { "fg": s:colors.green })
+" }}}
+
 " Language specific highlighting {{{
 
 " HTML {{{

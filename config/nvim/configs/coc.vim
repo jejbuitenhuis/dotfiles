@@ -1,9 +1,6 @@
 " TextEdit might fail if hidden is not set.
 set hidden
 
-" Give more space for displaying messages.
-set cmdheight=2
-
 " Having longer updatetime (default is 4000ms) leads to noticeable
 " delays and poor user experience.
 set updatetime=300
@@ -89,8 +86,6 @@ nmap <leader>rn <Plug>(coc-rename)
 xmap <leader>f <Plug>(coc-format-selected)
 nmap <leader>f <Plug>(coc-format-selected)
 
-" Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf <Plug>(coc-fix-current)
 

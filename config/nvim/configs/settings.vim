@@ -63,15 +63,8 @@ augroup wrap
 	autocmd FileType css,markdown,text,sass,scss setlocal wrap
 augroup END
 
-" Correct filetype for assembly
-autocmd BufNewFile,BufRead *.asm set ft=nasm
-autocmd FileType nasm call AssemblyConfig()
-
-function AssemblyConfig()
-	set noexpandtab tabstop=8 shiftwidth=8
-	retab
-endfunction
-
+" Map extensions to their correct filetype
+autocmd BufNewFile,BufRead *.s set ft=nasm
 autocmd BufNewFile,BufRead *.y set ft=y
 
 " Show folds in sidebar
@@ -90,7 +83,7 @@ set autoread
 set nospell
 
 " Give more space for displaying messages
-set cmdheight=2
+set cmdheight=1
 
 " Set leader
 let g:mapleader="\<Space>"
@@ -101,9 +94,6 @@ call matchadd('Error', '\s\+$')
 
 " match column's that are longer than 80 characters
 " call matchadd('Error', '\%>80v.\+')
-
-" Sync system clipboard with default yank register
-set clipboard=unnamedplus
 
 " SQL highlighting withing php strings
 let php_sql_query = 1
@@ -146,9 +136,6 @@ let g:indentLine_char = '⎸'
 " javascript bundle
 let g:javascript_plugin_jsdoc = 1
 
-" vim Closetag
-let g:closetag_emptyTags_caseSensitive = 1
-
 " vue bundle
 let g:vim_vue_plugin_use_scss = 1
 let g:vim_vue_plugin_highlight_vue_attr = 1
@@ -185,13 +172,13 @@ endfunction
 let g:fzf_buffers_jump = 1
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.6 } }
 let g:fzf_colors =
-	\ { 'fg':      ['fg', 'Normal'],
-	\ 'bg':      ['bg', 'Normal'],
-	\ 'hl':      ['fg', 'Comment'],
-	\ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-	\ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-	\ 'hl+':     ['fg', 'Statement'],
-	\ 'info':    ['fg', 'PreProc'],
+	\ { 'fg':	  ['fg', 'Normal'],
+	\ 'bg':	  ['bg', 'Normal'],
+	\ 'hl':	  ['fg', 'Comment'],
+	\ 'fg+':	 ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+	\ 'bg+':	 ['bg', 'CursorLine', 'CursorColumn'],
+	\ 'hl+':	 ['fg', 'Statement'],
+	\ 'info':	['fg', 'PreProc'],
 	\ 'border':  ['fg', 'Identifier'],
 	\ 'prompt':  ['fg', 'Conditional'],
 	\ 'pointer': ['fg', 'Exception'],
@@ -200,10 +187,6 @@ let g:fzf_colors =
 	\ 'header':  ['fg', 'Comment'] }
 command! -bang -nargs=? -complete=dir Files
 	\ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-
-" Java
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-autocmd FileType java JCEnable
 
 " clang completion
 let g:clang_library_path = '/usr/lib/llvm-10/lib'
@@ -232,3 +215,18 @@ let g:vim_markdown_math = 1
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
+
+" html autoclose tags
+let g:closetag_emptyTags_caseSensitive = 1
+let g:closetag_filenames = '*.html,*.phtml,*.vue'
+let g:closetag_xhtml_filenames = '*.xml,*.xhtml,*.jsx,*.tsx'
+let g:closetag_filetypes = 'html,phtml,vue'
+let g:closetag_xhtml_filetypes = 'xml,xhtml,jsx,tsx'
+
+" Match tag always
+let g:mta_filetypes = {
+	\ 'html' : 1,
+	\ 'xhtml' : 1,
+	\ 'xml' : 1,
+	\ 'jinja' : 1,
+	\}

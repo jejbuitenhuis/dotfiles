@@ -54,6 +54,13 @@ Plug 'godlygeek/tabular', { 'for': 'markdown' }
 Plug 'vim-scripts/DoxygenToolkit.vim', { 'for': 'cpp' }
 " Show indentation lines when indented with spaces
 Plug 'Yggdroot/indentLine'
+" Git in vim
+Plug 'tpope/vim-fugitive'
+" Required by plantuml-previewer
+Plug 'tyru/open-browser.vim'
+" Git diff
+Plug 'nvim-lua/plenary.nvim'
+Plug 'sindrets/diffview.nvim'
 
 " Code completion and snippets
 " Plug 'valloric/youcompleteme', { 'do': 'python3 ./install.py --all' }
@@ -63,6 +70,7 @@ Plug 'sirver/ultisnips'
 
 " language bundles and/or highlighting
 Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
 Plug 'fatih/vim-go'
 Plug 'StanAngeloff/php.vim'
 Plug 'rust-lang/rust.vim'
@@ -77,6 +85,9 @@ Plug 'plasticboy/vim-markdown'
 Plug 'janiczek/vim-latte'
 Plug 'lervag/vimtex'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'weirongxu/plantuml-previewer.vim'
+Plug 'aklt/plantuml-syntax'
+Plug 'vim-scripts/asmx86'
 
 " Color schemes
 Plug 'cocopon/iceberg.vim'
