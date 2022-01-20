@@ -23,8 +23,8 @@ set $monitor-laptop eDP-1
 set $monitor-ds-1 DP-2-2
 set $monitor-ds-2 DP-2-3
 
-set $cmd_volume_up pactl set-sink-volume @DEFAULT_SINK@ +2%
-set $cmd_volume_down pactl set-sink-volume @DEFAULT_SINK@ -2%
+set $cmd_volume_up pactl set-sink-volume @DEFAULT_SINK@ +1%
+set $cmd_volume_down pactl set-sink-volume @DEFAULT_SINK@ -1%
 set $cmd_volume_mute pactl set-sink-mute @DEFAULT_SINK@ toggle
 set $cmd_mic_mute pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
