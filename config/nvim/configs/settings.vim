@@ -64,7 +64,7 @@ augroup wrap
 augroup END
 
 " Map extensions to their correct filetype
-autocmd BufNewFile,BufRead *.s set ft=nasm
+autocmd BufNewFile,BufRead *.asm set ft=nasm
 autocmd BufNewFile,BufRead *.y set ft=y
 
 " Show folds in sidebar
