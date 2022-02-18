@@ -61,6 +61,11 @@ Plug 'tyru/open-browser.vim'
 " Git diff
 Plug 'nvim-lua/plenary.nvim'
 Plug 'sindrets/diffview.nvim'
+" Live markdown preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+" Execute sql to a server
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
 
 " Code completion and snippets
 " Plug 'valloric/youcompleteme', { 'do': 'python3 ./install.py --all' }

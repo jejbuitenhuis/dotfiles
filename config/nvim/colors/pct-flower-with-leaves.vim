@@ -246,6 +246,12 @@ call s:hi("jsonStringSQError", { "fg": s:colors.black, "bg": s:colors.red })
 call s:hi("jsonSemicolonError", { "fg": s:colors.black, "bg": s:colors.red })
 " }}}
 
+" Markdown {{{
+call s:hi("mkdLink", { "fg": s:colors.yellow, "gui": "underline", "c": "underline" })
+
+hi link mkdBold htmlBold
+" }}}
+
 " }}}
 
 " Plugin highlighting {{{

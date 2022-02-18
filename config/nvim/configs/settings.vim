@@ -17,7 +17,7 @@ endfunction
 
 if &encoding == "utf-8"
 	set listchars=space:·,nbsp:␣,tab:→\ ,eol:↩,extends:»,precedes:« list
-	set showbreak=↪
+	set showbreak=↪\ 
 
 	set foldtext=MyFoldText('')
 	set fillchars=fold:\ 
@@ -35,8 +35,8 @@ set numberwidth=4
 
 augroup numbertoggle
 	autocmd!
-	autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-	autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+	autocmd BufEnter,FocusGained,InsertLeave * if &ft != "dbui" | set relativenumber
+	autocmd BufLeave,FocusLost,InsertEnter   * if &ft != "dbui" | set norelativenumber
 augroup END
 
 " Use unix line endings
@@ -50,7 +50,7 @@ set splitbelow
 set scrolloff=999
 
 " Conceal settings
-set conceallevel=2 concealcursor=nc
+set conceallevel=2
 
 " Disable wrap
 set nowrap
@@ -81,6 +81,7 @@ set autoread
 
 " Disable vim buildin spellcheck
 set nospell
+set spelllang=en,nl
 
 " Give more space for displaying messages
 set cmdheight=1
@@ -101,18 +102,17 @@ let php_sql_query = 1
 " Character highlight (f, F)
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
-" Live markdown preview
-let g:instant_markdown_slow = 1
-let g:instant_markdown_autostart = 1
-let g:instant_markdown_open_to_the_world = 1
-let g:instant_markdown_allow_external_content = 1
-let g:instant_markdown_mathjax = 1
-let g:instant_markdown_autoscroll = 1
-
 " Markdown stuff
 let g:markdown_fenced_languages = [ 'html', 'javascript', 'typescript', 'css', 'scss' ]
 let g:markdown_syntax_conceal = 0
 let g:markdown_minlines = 100
+
+" vim markdown
+let g:vim_markdown_folding_level = 1
+let g:vim_markdown_strikethrough = 1
+let g:vim_markdown_math = 1
+let g:vim_markdown_folding_disabled = 1
+
 
 " NerdCommenter
 let g:NERDSpaceDelims = 1
@@ -156,6 +156,7 @@ let g:vim_vue_plugin_config = {
 " syntastic
 let g:syntastic_error_symbol = ""
 let g:syntastic_warning_symbol = ""
+let g:syntastic_sql_checkers = [ 'tsqllint' ]
 
 " skeleton
 let g:skeleton_template_dir = '~/.config/nvim/templates'
@@ -206,11 +207,6 @@ aug i3config_ft_detection
 	au BufNewFile,BufRead .config/i3/config set filetype=i3config
 aug end
 
-" markdown
-let g:vim_markdown_folding_level = 1
-let g:vim_markdown_strikethrough = 1
-let g:vim_markdown_math = 1
-
 " c++
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
@@ -230,3 +226,8 @@ let g:mta_filetypes = {
 	\ 'xml' : 1,
 	\ 'jinja' : 1,
 	\}
+
+" Database conncetion strings
+" Str0ngPassword
+let g:db_ui_use_nerd_fonts = 1
+let g:db_ui_show_help = 0
