@@ -123,3 +123,5 @@ fstream
 stylesheet
 viewport
 inline
+chktex
+bigint
