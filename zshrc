@@ -133,6 +133,7 @@ PATH="$PATH:/home/joram/bin"
 PATH="$SPICETIFY_INSTALL:$PATH"
 PATH="$PATH:/usr/share/texlive/"
 PATH="$PATH:/home/joram/Android/Sdk/platform-tools/"
+PATH="$PATH:/opt/mssql-tools/bin"
 
 # Customize fzf-tab
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -A --color=always $realpath'
