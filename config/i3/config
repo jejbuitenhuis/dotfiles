@@ -175,7 +175,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # scratchpad
 bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show, floating toggle
+bindsym $mod+minus scratchpad show
 
 # Start applications
 bindsym $mod_alt+b exec --no-startup-id $prg_browser
