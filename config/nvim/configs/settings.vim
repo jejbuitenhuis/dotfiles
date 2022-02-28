@@ -206,6 +206,7 @@ autocmd FileType html,vue EmmetInstall
 aug i3config_ft_detection
 	au!
 	au BufNewFile,BufRead .config/i3/config set filetype=i3config
+	au BufNewFile,BufRead .dotfiles/config/i3/config set filetype=i3config
 aug end
 
 " c++
