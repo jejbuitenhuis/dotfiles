@@ -60,7 +60,7 @@ set breakindent
 " except these
 augroup wrap
 	autocmd!
-	autocmd FileType css,markdown,text,sass,scss setlocal wrap
+	autocmd FileType css,markdown,text,sass,scss,sql setlocal wrap
 augroup END
 
 " Map extensions to their correct filetype
@@ -69,6 +69,7 @@ autocmd BufNewFile,BufRead *.y set ft=y
 
 " Show folds in sidebar
 set foldcolumn=1
+set foldmethod=marker
 
 " Highlight current line
 set cursorline
