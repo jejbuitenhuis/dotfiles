@@ -233,3 +233,17 @@ let g:mta_filetypes = {
 " Str0ngPassword
 let g:db_ui_use_nerd_fonts = 1
 let g:db_ui_show_help = 0
+
+" go language
+let g:go_code_completion_enabled = 0
+let g:go_doc_popup_window = 0
+let g:go_snippets_engine = 'ultisnips'
+let g:go_highlight_functions = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_string_spellcheck = 0
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
