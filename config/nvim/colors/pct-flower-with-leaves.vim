@@ -252,6 +252,10 @@ call s:hi("mkdLink", { "fg": s:colors.yellow, "gui": "underline", "c": "underlin
 hi link mkdBold htmlBold
 " }}}
 
+" GO (with https://github.com/fatih/vim-go) {{{
+hi link goFunctionCall Function
+" }}}
+
 " }}}
 
 " Plugin highlighting {{{
