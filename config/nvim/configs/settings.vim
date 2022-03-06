@@ -131,8 +131,7 @@ let g:Hexokinase_optInPatters = 'full_hex,triple_hex,rgb,rgba,hsl,hsla,colour_na
 " let g:indentLine_setColors = 0
 let g:indentLine_setConceal = 0
 let g:indentLine_defaultGroup = 'Comment'
-let g:indentLine_char = '⎸'
-" let g:indentLine_char = '⍿'
+let g:indentLine_char = '¦'
 
 " javascript bundle
 let g:javascript_plugin_jsdoc = 1
@@ -247,3 +246,7 @@ let g:go_highlight_build_constraints = 1
 let g:go_highlight_string_spellcheck = 0
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments = 1
+
+" Blamer
+let g:blamer_enabled = 1
+let g:blamer_prefix = ' ‣ '

@@ -52,6 +52,8 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 " Execute sql to a server
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
+" Show git blame behind current line
+Plug 'APZelos/blamer.nvim'
 
 " Code completion and snippets
 " Plug 'valloric/youcompleteme', { 'do': 'python3 ./install.py --all' }
