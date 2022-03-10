@@ -29,6 +29,7 @@ set $cmd_shutdown shutdown now
 
 set $prg_browser firefox
 set $prg_browser_alt firefox --private-window
+set $prg_browser_selector ~/.config/i3/scripts/firefox_profiles.sh
 set $prg_calculator i3-sensible-terminal -e qalc
 set $prg_editor code
 set $prg_editor_alt i3-sensible-terminal -e nvim
@@ -180,6 +181,7 @@ bindsym $mod+minus scratchpad show
 # Start applications
 bindsym $mod_alt+b exec --no-startup-id $prg_browser
 bindsym $mod_alt+Shift+b exec --no-startup-id $prg_browser_alt
+bindsym $mod_alt+Control+b exec --no-startup-id $prg_browser_selector
 bindsym $mod_alt+c exec --no-startup-id $prg_editor
 bindsym $mod_alt+Shift+c exec --no-startup-id $prg_editor_alt
 bindsym $mod_alt+e exec --no-startup-id $prg_files
