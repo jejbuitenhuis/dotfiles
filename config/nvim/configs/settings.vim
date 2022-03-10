@@ -250,3 +250,6 @@ let g:go_highlight_variable_assignments = 1
 " Blamer
 let g:blamer_enabled = 1
 let g:blamer_prefix = ' ‣ '
+
+" Rust
+let g:syntastic_rust_checkers = [] " Disable syntastic rust checker in favour of coc
