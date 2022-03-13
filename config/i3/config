@@ -9,6 +9,7 @@ set $left h
 set $right l
 
 set $monitor-laptop eDP-1
+set $monitor-hdmi HDMI-2
 set $monitor-ds-1 DP-2-2
 set $monitor-ds-2 DP-2-3
 
@@ -128,15 +129,15 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-workspace $ws1 output $monitor-laptop
+workspace $ws1 output $monitor-hdmi $monitor-laptop
 workspace $ws2 output $monitor-ds-1 $monitor-laptop
-workspace $ws3 output $monitor-ds-2 $monitor-laptop
+workspace $ws3 output $monitor-ds-2 $monitor-hdmi $monitor-laptop
 workspace $ws4 output $monitor-laptop
-workspace $ws5 output $monitor-ds-1 $monitor-laptop
+workspace $ws5 output $monitor-ds-1 $monitor-hdmi $monitor-laptop
 workspace $ws6 output $monitor-ds-2 $monitor-laptop
-workspace $ws7 output $monitor-laptop
+workspace $ws7 output $monitor-hdmi $monitor-laptop
 workspace $ws8 output $monitor-ds-1 $monitor-laptop
-workspace $ws9 output $monitor-ds-2 $monitor-laptop
+workspace $ws9 output  $monitor-hdmi$monitor-ds-2 $monitor-laptop
 workspace $ws10 output $monitor-laptop
 
 # switch to workspace
