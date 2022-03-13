@@ -1,0 +1,3 @@
+fn @BASENAME@ {
+	@CURSOR@
+}
