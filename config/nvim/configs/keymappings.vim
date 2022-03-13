@@ -39,8 +39,10 @@ map <silent> <leader>c :Deol<CR>
 nnoremap <leader>ca :w <bar> %bd <bar> e# <bar> bd# <CR>
 
 " fzf
-nnoremap <silent> <leader>of :Files<CR>
-nnoremap <silent> <leader>ob :Buffers<CR>
+" nnoremap <silent> <leader>of :Files<CR>
+" nnoremap <silent> <leader>ob :Buffers<CR>
+nnoremap <silent> <c-k> :Files<CR>
+nnoremap <silent> <c-j> :Buffers<CR>
 
 " cursor highlight in command mode
 function! HighlightCursor( isOn, key )
