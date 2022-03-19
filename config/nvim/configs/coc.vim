@@ -66,6 +66,14 @@ nmap <silent> ga <Plug>(coc-codeaction)
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
+" scroll pop-up windows https://vi.stackexchange.com/a/27861
+if has('nvim-0.4.3') || has('patch-8.2.0750')
+	nnoremap <nowait><expr> <c-f> coc#float#has_scroll() ? coc#float#scroll(1, 1) : "\<C-f>"
+	nnoremap <nowait><expr> <c-b> coc#float#has_scroll() ? coc#float#scroll(0, -1) : "\<C-b>"
+	inoremap <nowait><expr> <c-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1, 1)\<cr>" : "\<Right>"
+	inoremap <nowait><expr> <c-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0, -1)\<cr>" : "\<Left>"
+endif
+
 function! s:show_documentation()
 	if ( index(['vim', 'help'], &filetype) >= 0 )
 		execute 'h ' . expand('<cword>')
