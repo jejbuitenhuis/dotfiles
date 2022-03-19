@@ -37,7 +37,7 @@ foreground = ${colors.foreground}
 font-0 = FiraCode Nerd Font Mono:style=Bold:size=10;3
 font-1 = FiraCode Nerd Font Mono:style=Bold:size=15;3
 
-modules-left = i3 wifi
+modules-left = i3 wifi vpn
 modules-right = spotify brightness volume battery time
 
 padding = 2
@@ -62,7 +62,7 @@ foreground = ${colors.foreground}
 font-0 = FiraCode Nerd Font Mono:style=Bold:size=10;3
 font-1 = FiraCode Nerd Font Mono:style=Bold:size=15;3
 
-modules-left = i3
+modules-left = i3 wifi vpn
 modules-right = brightness volume time
 
 padding = 2
@@ -85,6 +85,14 @@ format-disconnected = "<label-disconnected>"
 label-connected =    "%{T2}%{F#829399}%{F-}%{T-} %essid% (%local_ip%)"
 label-disconnected = "%{T2}%{F#829399}%{F-}%{T-} NO INTERNET"
 label-disconnected-foreground = ${colors.foreground_alt}
+
+[module/vpn]
+type = custom/script
+
+label = "%{T2}%{F#829399}%{F-}%{T-} %output%"
+
+exec = (pgrep -a openvpn$ | head -n 1 | awk '{print $NF }' | cut -d '.' -f 1 && echo down) | head -n 1
+interval = 5
 
 [module/i3]
 type = internal/i3
