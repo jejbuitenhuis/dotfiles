@@ -127,3 +127,4 @@ chktex
 bigint
 stdin
 curr
+dotenv
