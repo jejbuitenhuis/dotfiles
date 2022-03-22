@@ -75,6 +75,7 @@ Plug 'lervag/vimtex'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'compnerd/arm64asm-vim'
 Plug 'vim-scripts/asmx86'
+Plug 'elkowar/yuck.vim'
 
 " Color schemes
 Plug 'joshdick/onedark.vim'
