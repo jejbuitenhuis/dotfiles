@@ -75,7 +75,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(fzf-tab git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(fzf-tab git nix-shell zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,6 +109,7 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # Aliases
 alias v=nvim
+alias ns=nix-shell
 alias bat=batcat
 alias fd=fdfind
 eval $(thefuck --alias)
@@ -124,6 +125,7 @@ export MANPAGER='nvim +Man!'
 export MYSQL_PS1="\u@\h [\d]> "
 export EDITOR='nvim'
 export ANDROID_SDK_ROOT="/home/joram/Android/Sdk/"
+export NIX_SHELL_PRESERVE_PROMPT=1
 
 # Path stuff
 PATH="$PATH:/home/joram/scripts/"
