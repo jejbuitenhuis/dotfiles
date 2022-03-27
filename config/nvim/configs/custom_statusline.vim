@@ -14,16 +14,26 @@ let g:currentmode={
 	\ 't'	: 'T ',
 	\}
 
+function WrapString(string, left, right)
+	if len( trim(a:string) ) == 0
+		return ''
+	endif
+
+	let start = ''
+
+	return a:left . a:string . a:right
+endfunction
+
 set statusline+=%{g:currentmode[mode()]}
 
 set statusline+=%<%f
 set statusline+=%m
 
-set statusline+=%7([%{&fileformat}]%)
+set statusline+=%(\ %{WrapString(coc#status(),'[',']')}%)
 
 set statusline+=%= " split to the right
 
-set statusline+=[%n%R%Y]\ 
+set statusline+=[%n%R%Y,%{toupper(&fileformat)}]\ 
 set statusline+=%c,
 set statusline+=%l/%L
 set statusline+=\ %P
