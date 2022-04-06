@@ -129,3 +129,4 @@ stdin
 curr
 dotenv
 concat
+deserialize
