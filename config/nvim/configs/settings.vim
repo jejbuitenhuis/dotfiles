@@ -151,6 +151,7 @@ let g:NERDTrimTrailingWhitespace = 1
 " Setup local vimrc {{{
 let g:localvimrc_enable = 1
 let g:localvimrc_name = [ '.lvimrc', '.vimrc' ]
+let g:localvimrc_persistent = 1
 " }}}
 
 " Setup color highlighting {{{
@@ -279,7 +280,8 @@ let g:db_ui_show_help = 0
 
 " go language {{{
 let g:go_code_completion_enabled = 0
-let g:go_doc_popup_window = 0
+let g:go_doc_keywordprg_enabled = 0 " managed by coc-go
+let g:go_fmt_autosave = 0
 let g:go_snippets_engine = 'ultisnips'
 let g:go_highlight_functions = 1
 let g:go_highlight_function_parameters = 1
