@@ -59,16 +59,10 @@ set scrolloff=999
 " Conceal settings
 set conceallevel=2
 
-" Disable wrap
-set nowrap
+" Enable wrap
+set wrap
 set linebreak
 set breakindent
-
-" except these
-augroup wrap
-	autocmd!
-	autocmd FileType css,markdown,text,sass,scss,sql setlocal wrap
-augroup END
 
 " Map extensions to their correct filetype
 autocmd BufNewFile,BufRead *.asm set ft=nasm
