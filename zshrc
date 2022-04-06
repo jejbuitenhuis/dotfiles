@@ -111,7 +111,10 @@ source $ZSH/oh-my-zsh.sh
 alias v=nvim
 alias ns=nix-shell
 alias bat=batcat
+alias cat=bat
 alias fd=fdfind
+alias docker='sudo docker'
+alias docker-compose='sudo docker-compose'
 eval $(thefuck --alias)
 
 
@@ -126,6 +129,7 @@ export MYSQL_PS1="\u@\h [\d]> "
 export EDITOR='nvim'
 export ANDROID_SDK_ROOT="/home/joram/Android/Sdk/"
 export NIX_SHELL_PRESERVE_PROMPT=1
+export SUDO_PROMPT=" password for %p: "
 
 # Path stuff
 PATH="$PATH:/home/joram/scripts/"
