@@ -156,6 +156,13 @@ autoload -Uz compinit && compinit
 bindkey '^ ' autosuggest-accept
 bindkey '\e[20;5~' autosuggest-execute
 
+# shows if the directories in this directory are dirty git directories
+git_dirty() {
+	for dir in ./*/; do
+		( cd "${dir%/*}" && echo "$dir: $([[ $(git diff --stat) != '' ]] && echo "\e[31mdirty" || echo "\e[32mclean")\e[0m" )
+	done
+}
+
 # fh - repeat history
 fh() {
 	print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
@@ -164,6 +171,3 @@ fh() {
 function wallpaper() {
 	feh --no-fehbg --bg-fill $1
 }
-
-# Startup
-# neofetch
