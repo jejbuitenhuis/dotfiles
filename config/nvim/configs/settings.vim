@@ -59,6 +59,9 @@ set scrolloff=999
 " Conceal settings
 set conceallevel=2
 
+" Have one statusline for every window
+set laststatus=3
+
 " Enable wrap
 set wrap
 set linebreak
@@ -294,4 +297,8 @@ let g:blamer_prefix = ' ‣ '
 
 " Rust {{{
 let g:syntastic_rust_checkers = [] " Disable syntastic rust checker in favour of coc
+" }}}
+
+" Python {{{
+let g:syntastic_python_checkers = [] " Disable syntastic rust checker in favour of coc
 " }}}
