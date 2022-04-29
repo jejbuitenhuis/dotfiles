@@ -159,7 +159,7 @@ bindkey '\e[20;5~' autosuggest-execute
 # shows if the directories in this directory are dirty git directories
 git_dirty() {
 	for dir in ./*/; do
-		( cd "${dir%/*}" && echo "$dir: $([[ $(git diff --stat) != '' ]] && echo "\e[31mdirty" || echo "\e[32mclean")\e[0m" )
+		( cd "${dir%/*}" && echo "$dir: $([[ $(git diff --stat) != '' ]] && echo "\e[31mdirty\n$(git status --short)" || echo "\e[32mclean")\e[0m" )
 	done
 }
 
