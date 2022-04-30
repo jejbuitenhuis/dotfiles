@@ -16,13 +16,13 @@ if &encoding == "utf-8"
 	set showbreak=↪\ 
 
 	set foldtext=MyFoldText('')
-	set fillchars=fold:\ 
+	set fillchars=fold:\ ,foldopen:,foldclose:
 else
 	set listchars=space:.,tab:>-,eol:/,nbsp:~,extends:>,precedes:< list
 	set showbreak=\\
 
 	set foldtext=MyFoldText('^')
-	set fillchars=fold:\ 
+	set fillchars=fold:\ ,foldopen:-,foldclose:+
 endif
 " }}}
 
