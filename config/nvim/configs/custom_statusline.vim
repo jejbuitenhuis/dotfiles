@@ -1,47 +1,28 @@
 set statusline=
 
-" show current mode
+" show current mode {{{
 let g:currentmode={
-	\ 'n'	: 'N ',
-	\ 'v'	: 'V ',
-	\ 'V'	: 'VL ',
-	\ "\<C-V>" : 'VB ',
-	\ 's'	: 'S ',
-	\ 'i'	: 'I ',
-	\ 'R'	: 'R ',
-	\ 'Rv' : 'VR ',
-	\ 'c'	: 'C ',
-	\ 't'	: 'T ',
-	\}
+	\ 'n'	: 'NORMAL',
+	\ 'v'	: 'VISUAL',
+	\ 'V'	: 'V-LINE',
+	\ "\<C-V>" : 'V-BLOCK',
+	\ 's'	: 'SELECT',
+	\ 'i'	: 'INSERT',
+	\ 'R'	: 'REPLACE',
+	\ 'Rv' : 'V-REPLACE',
+	\ 'c'	: 'COMMAND',
+	\ 't'	: 'TERMINAL',
+	\} " }}}
 
-function WrapString(string, left, right)
-	if len( trim(a:string) ) == 0
+function Block(content, color = 1) " {{{
+	if len( trim(a:content) ) == 0
 		return ''
 	endif
 
-	let start = ''
+	return '%' . a:color . '* ' . a:content . ' %0*'
+endfunction " }}}
 
-	return a:left . a:string . a:right
-endfunction
-
-set statusline+=%{g:currentmode[mode()]}
-
-set statusline+=%<%f
-set statusline+=%m
-
-set statusline+=%(\ %{WrapString(coc#status(),'[',']')}%)
-
-set statusline+=%= " split to the right
-
-set statusline+=[%n%R%Y,%{toupper(&fileformat)}]\ 
-set statusline+=%c,
-set statusline+=%l/%L
-set statusline+=\ %P
-
-set showtabline=1
-set tabline=%!GetTabLine()
-
-function GetTabLine()
+function GetTabLine() " {{{
 	let result = ''
 	let currTabPage = tabpagenr()
 	let currBufNr = bufnr('%')
@@ -72,4 +53,21 @@ function GetTabLine()
 	let result .= '%#TabLineFill#%='
 
 	return result
-endfunction
+endfunction " }}}
+
+" The current mode
+set statusline+=%{%Block(g:currentmode[mode()],7)%}
+" Current filename and whether or not the file is readonly
+set statusline+=%{%Block('%<%f%m',6)%}
+" Coc status
+set statusline+=%{%Block(coc#status(),2)%}
+
+" split to the right
+set statusline+=%=
+
+" Buffer number, filetype, fileformat
+set statusline+=%{%Block('%n\ %Y\ '.toupper(&fileformat),5)%}
+" Current column number, current line, total line count, line percentage
+set statusline+=%{%Block('%c,%l/%L\ %P',8)%}
+
+set tabline=%!GetTabLine()

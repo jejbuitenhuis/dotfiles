@@ -143,7 +143,7 @@ call s:hi("SpellRare", { "gui": "underline,italic", "c": "underline,italic" })
 call s:hi("StatusLine", { "fg": s:colors.white, "bg": s:colors.darker.black })
 call s:hi("StatusLineNC", { "fg": s:colors.darker.white, "bg": s:colors.darker.gray })
 call s:hi("TabLine", { "fg": s:colors.darker.white, "bg": s:colors.darker.gray })
-call s:hi("TabLineFill", { "fg": s:colors.darker.white, "bg": s:colors.darker.gray })
+call s:hi("TabLineFill", { "fg": s:colors.darker.white, "bg": s:colors.darker.black })
 call s:hi("TabLineSel", { "fg": s:colors.black, "bg": s:colors.pink })
 call s:hi("Visual", { "bg": s:colors.darker.gray })
 call s:hi("WarningMsg", { "bg": s:colors.yellow })
@@ -153,6 +153,18 @@ call s:hi("WildMenu", { "fg": s:colors.black, "bg": s:colors.pink })
 " Special highlighting groups {{{
 call s:hi("diffRemoved", { "fg": s:colors.red })
 call s:hi("diffAdded", { "fg": s:colors.green })
+" }}}
+
+" User highlight groups (`:h hl-User1`) {{{
+call s:hi("User1", { "bg": s:colors.darker.black, "fg": s:colors.white })
+call s:hi("User2", { "bg": s:colors.gray, "fg": s:colors.white })
+call s:hi("User3", { "bg": s:colors.red, "fg": s:colors.black })
+call s:hi("User4", { "bg": s:colors.green, "fg": s:colors.black })
+call s:hi("User5", { "bg": s:colors.yellow, "fg": s:colors.black })
+call s:hi("User6", { "bg": s:colors.blue, "fg": s:colors.black })
+call s:hi("User7", { "bg": s:colors.pink, "fg": s:colors.black })
+call s:hi("User8", { "bg": s:colors.cyan, "fg": s:colors.black })
+call s:hi("User9", { "bg": s:colors.white, "fg": s:colors.black })
 " }}}
 
 " Language specific highlighting {{{

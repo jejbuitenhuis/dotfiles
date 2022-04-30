@@ -62,6 +62,9 @@ set conceallevel=2
 " Have one statusline for every window
 set laststatus=3
 
+" Only show tabline when there are more than 1 tabs open
+set showtabline=1
+
 " Enable wrap
 set wrap
 set linebreak
