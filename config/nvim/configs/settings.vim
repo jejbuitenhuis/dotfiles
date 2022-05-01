@@ -304,4 +304,5 @@ let g:syntastic_rust_checkers = [] " Disable syntastic rust checker in favour of
 
 " Python {{{
 let g:syntastic_python_checkers = [] " Disable syntastic rust checker in favour of coc
+let g:python3_host_prog = '/usr/bin/python3'
 " }}}
