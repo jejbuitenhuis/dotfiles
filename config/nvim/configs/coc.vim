@@ -10,25 +10,8 @@ set shortmess+=c
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-	" Recently vim can merge signcolumn and number column into one
-	set signcolumn=number
-else
-	set signcolumn=auto
-endif
-
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-" inoremap <silent><expr> <TAB>
-			" \ pumvisible() ? "\<C-n>" :
-			" \ <SID>check_back_space() ? <SID>insert_tab():
-			" \ coc#refresh()
-" inoremap <silent><expr> <TAB>
-			" \ pumvisible() ? "\<C-n>" :
-			" \ <SID>check_back_space() ? "\<TAB>":
-			" \ coc#refresh()
-" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" Recently vim can merge signcolumn and number column into one
+set signcolumn=number
 
 function! s:check_back_space() abort
 	let col = col('.') - 1
@@ -101,6 +84,3 @@ nmap <leader>qf <Plug>(coc-fix-current)
 command! -nargs=0 Format :call CocAction('format')
 " Add `:OR` command for organizing imports of the current buffer.
 command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
-
-" Custom stuff
-" set runtimepath^=/home/joram/Projects/coc-processing

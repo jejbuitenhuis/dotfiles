@@ -56,7 +56,6 @@ Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'APZelos/blamer.nvim'
 
 " Code completion and snippets
-" Plug 'valloric/youcompleteme', { 'do': 'python3 ./install.py --all' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'xavierd/clang_complete'
 Plug 'sirver/ultisnips'
@@ -84,4 +83,3 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'embark-theme/vim', { 'as': 'embark' }
 
 call plug#end()
-

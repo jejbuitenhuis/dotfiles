@@ -18,7 +18,7 @@ if &encoding == "utf-8"
 	set foldtext=MyFoldText('')
 	set fillchars=fold:\ ,foldopen:,foldclose:
 else
-	set listchars=space:.,tab:>-,eol:/,nbsp:~,extends:>,precedes:< list
+	set listchars=space:.,nbsp:~,tab:>-,eol:/,extends:>,precedes:< list
 	set showbreak=\\
 
 	set foldtext=MyFoldText('^')
@@ -50,8 +50,7 @@ set autoindent noexpandtab tabstop=4 shiftwidth=4 " tabs
 set ff=unix
 
 " open split windows on the right side or on the bottom
-set splitright
-set splitbelow
+set splitright splitbelow
 
 " Center cursor
 set scrolloff=999
@@ -66,9 +65,7 @@ set laststatus=3
 set showtabline=1
 
 " Enable wrap
-set wrap
-set linebreak
-set breakindent
+set wrap linebreak breakindent
 
 " Map extensions to their correct filetype
 autocmd BufNewFile,BufRead *.asm set ft=nasm
@@ -100,9 +97,6 @@ let g:maplocalleader="\<Space>"
 
 " Mark trailing whitespace with an error color
 call matchadd('Error', '\s\+$')
-
-" match column's that are longer than 80 characters
-" call matchadd('Error', '\%>80v.\+')
 " }}}
 
 " persistent undo {{{
@@ -159,7 +153,6 @@ let g:Hexokinase_optInPatters = 'full_hex,triple_hex,rgb,rgba,hsl,hsla,colour_na
 " }}}
 
 " Indent line {{{
-" let g:indentLine_setColors = 0
 let g:indentLine_setConceal = 0
 let g:indentLine_defaultGroup = 'Comment'
 let g:indentLine_char = '¦'
@@ -191,6 +184,8 @@ let g:vim_vue_plugin_config = {
 let g:syntastic_error_symbol = ""
 let g:syntastic_warning_symbol = ""
 let g:syntastic_sql_checkers = [ 'tsqllint' ]
+let g:syntastic_python_checkers = [] " Disable syntastic rust checker in favour of coc
+let g:syntastic_rust_checkers = [] " Disable syntastic rust checker in favour of coc
 " }}}
 
 " skeleton {{{
@@ -244,8 +239,8 @@ autocmd FileType html,vue EmmetInstall
 " i3config {{{
 aug i3config_ft_detection
 	au!
-	au BufNewFile,BufRead .config/i3/config set filetype=i3config
-	au BufNewFile,BufRead .dotfiles/config/i3/config set filetype=i3config
+	au BufNewFile,BufRead,BufEnter .config/i3/config set filetype=i3config
+	au BufNewFile,BufRead,BufEnter .dotfiles/config/i3/config set filetype=i3config
 aug end
 " }}}
 
@@ -298,11 +293,6 @@ let g:blamer_enabled = 1
 let g:blamer_prefix = ' ‣ '
 " }}}
 
-" Rust {{{
-let g:syntastic_rust_checkers = [] " Disable syntastic rust checker in favour of coc
-" }}}
-
 " Python {{{
-let g:syntastic_python_checkers = [] " Disable syntastic rust checker in favour of coc
 let g:python3_host_prog = '/usr/bin/python3'
 " }}}
