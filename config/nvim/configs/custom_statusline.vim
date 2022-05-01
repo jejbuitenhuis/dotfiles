@@ -22,6 +22,26 @@ function Block(content, color = 1) " {{{
 	return '%' . a:color . '* ' . a:content . ' %0*'
 endfunction " }}}
 
+function CocStatus() " {{{
+	let info = get(b:, 'coc_diagnostic_info', {})
+
+	if empty(info)
+		return ''
+	endif
+
+	let messages = []
+
+	if get(info, 'error', 0)
+		call add( messages, 'E' . info['error'] )
+	endif
+
+	if get(info, 'warning', 0)
+		call add( messages, 'W' . info['warning'] )
+	endif
+
+	return join(messages, ' ')
+endfunction " }}}
+
 function GetTabLine() " {{{
 	let result = ''
 	let currTabPage = tabpagenr()
@@ -60,11 +80,13 @@ set statusline+=%{%Block(g:currentmode[mode()],7)%}
 " Current filename and whether or not the file is readonly
 set statusline+=%{%Block('%<%f%m',6)%}
 " Coc status
-set statusline+=%{%Block(coc#status(),2)%}
+set statusline+=%{%Block(trim(get(g:,'coc_status','')),2)%}
 
 " split to the right
 set statusline+=%=
 
+" Current error and warning count
+set statusline+=%{%Block(CocStatus(),3)%}
 " Buffer number, filetype, fileformat
 set statusline+=%{%Block('%n\ %Y\ '.toupper(&fileformat),5)%}
 " Current column number, current line, total line count, line percentage
