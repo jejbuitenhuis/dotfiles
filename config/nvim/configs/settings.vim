@@ -296,3 +296,10 @@ let g:blamer_prefix = ' ‣ '
 " Python {{{
 let g:python3_host_prog = '/usr/bin/python3'
 " }}}
+
+" Split join {{{
+let g:splitjoin_trailing_comma = 1
+let g:splitjoin_html_attributes_bracket_on_new_line = 1
+let g:splitjoin_java_argument_split_first_newline = 1
+let g:splitjoin_java_argument_split_last_newline  = 1
+" }}}
