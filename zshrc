@@ -146,6 +146,8 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -A --color=always $realpath'
 zstyle ':fzf-tab:complete:nvim:*' fzf-preview 'batcat -p --color=always $realpath'
 _comp_options+=(globdots)
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # https://stackoverflow.com/a/58517668/9946744
 autoload -Uz compinit && compinit
 
