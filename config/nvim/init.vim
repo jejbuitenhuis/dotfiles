@@ -5,3 +5,4 @@ runtime! configs/colorscheme.vim
 runtime! configs/custom_statusline.vim
 runtime! configs/coc.vim
 runtime! configs/plugins.vim
+runtime! configs/settings.lua

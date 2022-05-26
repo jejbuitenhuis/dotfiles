@@ -54,6 +54,10 @@ Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
 " Show git blame behind current line
 Plug 'APZelos/blamer.nvim'
+" Swap text with cx
+Plug 'tommcdo/vim-exchange'
+" Open file text on window separator
+Plug 'b0o/incline.nvim'
 
 " Code completion and snippets
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
