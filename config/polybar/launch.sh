@@ -3,11 +3,7 @@
 killall -q polybar
 
 for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-	[[ $m = "eDP-1" ]] && {
-		all_bars="top"
-	} || {
-		all_bars="top_alt"
-	}
+	all_bars="top"
 
 	IFS="," read -r -a bars <<< "$all_bars"
 
