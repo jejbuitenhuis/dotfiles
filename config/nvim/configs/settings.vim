@@ -147,7 +147,8 @@ let g:markdown_syntax_conceal = 0
 let g:markdown_minlines = 100
 
 " vim markdown
-let g:vim_markdown_folding_level = 1
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_folding_level = 0
 let g:vim_markdown_strikethrough = 1
 let g:vim_markdown_math = 1
 " }}}
