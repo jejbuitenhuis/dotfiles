@@ -12,6 +12,7 @@ set $monitor-laptop eDP-1
 set $monitor-hdmi HDMI-2
 set $monitor-ds-1 DP-2-2
 set $monitor-ds-2 DP-2-3
+set $monitor-tb-1 DP-1
 
 set $cmd_volume_up pactl set-sink-volume @DEFAULT_SINK@ +1%
 set $cmd_volume_down pactl set-sink-volume @DEFAULT_SINK@ -1%
@@ -131,15 +132,15 @@ set $ws9 "9"
 set $ws10 "10"
 
 workspace $ws1 output $monitor-laptop
-workspace $ws2 output $monitor-ds-1 $monitor-hdmi $monitor-laptop
+workspace $ws2 output $monitor-ds-1 $monitor-hdmi $monitor-tb-1 $monitor-laptop
 workspace $ws3 output $monitor-ds-2 $monitor-laptop
-workspace $ws4 output $monitor-hdmi $monitor-laptop
+workspace $ws4 output $monitor-hdmi $monitor-tb-1 $monitor-laptop
 workspace $ws5 output $monitor-ds-1 $monitor-laptop
-workspace $ws6 output $monitor-hdmi $monitor-ds-2 $monitor-laptop
+workspace $ws6 output $monitor-hdmi $monitor-ds-2 $monitor-tb-1 $monitor-laptop
 workspace $ws7 output $monitor-laptop
-workspace $ws8 output $monitor-ds-1 $monitor-hdmi $monitor-laptop
+workspace $ws8 output $monitor-ds-1 $monitor-hdmi $monitor-tb-1 $monitor-laptop
 workspace $ws9 output $monitor-ds-2 $monitor-laptop
-workspace $ws10 output $monitor-hdmi $monitor-laptop
+workspace $ws10 output $monitor-hdmi $monitor-tb-1 $monitor-laptop
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
