@@ -58,6 +58,8 @@ Plug 'APZelos/blamer.nvim'
 Plug 'tommcdo/vim-exchange'
 " Open file text on window separator
 Plug 'b0o/incline.nvim'
+" Restore cursor in last position
+Plug 'farmergreg/vim-lastplace'
 
 " Code completion and snippets
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
