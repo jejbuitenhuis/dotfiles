@@ -245,6 +245,16 @@ call s:hi("jsThis", { "fg": s:colors.cyan })
 call s:hi("jsUndefined", { "fg": s:colors.red })
 " }}}
 
+" TypeScript {{{
+call s:hi("typescriptTypeCast", { "fg": s:colors.cyan })
+call s:hi("typescriptExceptions", { "fg": s:colors.cyan })
+call s:hi("typescriptGlobalObjects", { "fg": s:colors.cyan })
+call s:hi("typescriptBraces", { "fg": s:colors.white })
+call s:hi("typescriptParens", { "fg": s:colors.white })
+call s:hi("typescriptEndColons", { "fg": s:colors.white })
+call s:hi("typescriptOperator", { "fg": s:colors.pink })
+" }}}
+
 " JSON {{{
 call s:hi("jsonCommentError", { "fg": s:colors.black, "bg": s:colors.red })
 call s:hi("jsonKeyword", { "fg": s:colors.pink })
@@ -282,6 +292,18 @@ call s:hi("SpelunkerComplexOrCompoundWord", { "gui": "underline,italic", "c": "u
 " https://github.com/unblevable/quick-scope {{{
 call s:hi("QuickScopePrimary", { "fg": s:colors.pink, "gui": "underline", "c": "underline" })
 call s:hi("QuickScopeSecondary", { "fg": s:colors.yellow, "gui": "underline", "c": "underline" })
+" }}}
+
+" https://github.com/maxmellon/vim-jsx-pretty {{{
+hi def link jsxOpenPunct htmlTag
+hi def link jsxClosePunct htmlEndTag
+hi def link jsxCloseString htmlEndTag
+hi def link jsxTagName htmlTagName
+hi def link jsxComponentName htmlTagName
+hi def link jsxAttrib htmlArg
+hi def link jsxBraces htmlTag
+hi def link jsxEqual htmlTag
+hi def link jsxTag htmlTag
 " }}}
 
 " }}}
