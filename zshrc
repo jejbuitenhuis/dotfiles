@@ -153,6 +153,7 @@ zstyle ':fzf-tab:complete:nvim:*' fzf-preview 'batcat -p --color=always $realpat
 
 # Include hidden files in autocomplete
 _comp_options+=(globdots)
+zstyle ':completion:*' special-dirs false
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
