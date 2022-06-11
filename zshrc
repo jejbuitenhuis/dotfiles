@@ -141,15 +141,20 @@ PATH="$PATH:/usr/share/texlive/"
 PATH="$PATH:/home/joram/Android/Sdk/platform-tools/"
 PATH="$PATH:/opt/mssql-tools/bin"
 
-# Customize fzf-tab
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -A --color=always $realpath'
-zstyle ':fzf-tab:complete:nvim:*' fzf-preview 'batcat -p --color=always $realpath'
-_comp_options+=(globdots)
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Nix path
+export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
 
 # https://stackoverflow.com/a/58517668/9946744
 autoload -Uz compinit && compinit
+
+# Customize fzf-tab
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -A --color=always $realpath'
+zstyle ':fzf-tab:complete:nvim:*' fzf-preview 'batcat -p --color=always $realpath'
+
+# Include hidden files in autocomplete
+_comp_options+=(globdots)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # source ~/.zsh-plugins/fzf-tab-completion/zsh/fzf-zsh-completion.sh
 # bindkey '^I' fzf_completion
@@ -173,3 +178,5 @@ fh() {
 function wallpaper() {
 	feh --no-fehbg --bg-fill $1
 }
+
+source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
