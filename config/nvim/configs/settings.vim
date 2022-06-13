@@ -215,6 +215,18 @@ function! g:skeleton_replacements_cpp.GUARD()
 
 	return toupper(filePath)
 endfunction
+
+let g:skeleton_replacements_typescriptreact = {}
+
+function! g:skeleton_replacements_typescriptreact.COMPONENT_NAME()
+	let fileName = expand('%:t:r')
+
+	if fileName ==? "index"
+		let fileName = expand('%:h:t')
+	endif
+
+	return fileName
+endfunction
 " }}}
 
 " fzf {{{

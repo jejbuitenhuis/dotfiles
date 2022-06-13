@@ -1,0 +1,11 @@
+# Stylesheet
+snippet style "Stylesheet" b
+const styles = StyleSheet.create({
+	$0
+});
+endsnippet
+
+# useState<type>(default)
+snippet state "useState<type>(default)"
+const [ ${1:variable}, set`!p snip.rv = re.sub('([a-zA-Z])', lambda x: x.groups()[0].upper(), t[1], 1)` ] = useState$2(${3:null});$0
+endsnippet
