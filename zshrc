@@ -75,7 +75,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(fzf-tab git nix-shell zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(fzf-tab nix-shell zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,8 +105,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# https://stackoverflow.com/a/58517668/9946744
+autoload -Uz +X compinit && compinit
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 # Aliases
 alias v=nvim
 alias ns=nix-shell
@@ -117,6 +121,19 @@ alias docker='sudo docker'
 alias docker-compose='sudo docker-compose'
 eval $(thefuck --alias)
 
+# from https://thoughtbot.com/upcase/videos/intro-to-dotfiles
+# No arguments: `git status`
+# With arguments: acts like `git`
+g() {
+	if [[ $# > 0 ]]; then
+		git $@
+	else
+		git status
+	fi
+}
+
+# Complete `g` like `git`
+compdef g=git
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -143,9 +160,6 @@ PATH="$PATH:/opt/mssql-tools/bin"
 
 # Nix path
 export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
-
-# https://stackoverflow.com/a/58517668/9946744
-autoload -Uz compinit && compinit
 
 # Customize fzf-tab
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -A --color=always $realpath'
