@@ -1,0 +1,11 @@
+#!/bin/bash
+
+IFS='/' read -r -a path_parts <<< "$PWD"
+file_name="${path_parts[-1]}.pde"
+
+[[ -f "$PWD/$file_name" ]] || {
+    echo "File $PWD/$file_name does not exist!"
+    exit 1
+}
+
+processing-java --sketch="$PWD" --force --run

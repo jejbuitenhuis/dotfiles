@@ -1,0 +1,18 @@
+#!/bin/bash
+
+FILE_STATE="/sys/class/power_supply/BAT0/status"
+FILE_CAPACITY="/sys/class/power_supply/BAT0/capacity"
+
+AMOUNT_LOW=20
+
+STATE_CHARGING="Charging"
+
+CURR_STATE=$(cat "$FILE_STATE")
+
+if [ "$CURR_STATE" != "$STATE_CHARGING" ]; then
+	CURR_LEVEL=$(cat "$FILE_CAPACITY")
+
+	if (( $CURR_LEVEL < $AMOUNT_LOW )); then
+		notify-send -u "critical" "Battery is below $AMOUNT_LOW%"
+	fi
+fi

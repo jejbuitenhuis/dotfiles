@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#			   eDP-1 DP-2-2 DP-2-3
+mouse_offsets=( 3840  1920   1920 )
+		 dpis=( 192   96     96 )
+
+dpi=dpis[0]
+mouse_x=$(xdotool getmouselocation | sed -En "s/x:([0-9]+).*/\1/p")
+
+# find current monitor and set the correct dpi
+for i in "${!mouse_offsets[@]}";
+do
+	x=0
+
+	for j in $(seq 0 1 $i)
+	do
+		x=$(( x + ${mouse_offsets[$j]} ))
+	done
+
+	if [[ $mouse_x -lt $x ]]
+	then
+		dpi=${dpis[$i]}
+		break
+	fi
+done
+
+echo $dpi

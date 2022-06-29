@@ -1,0 +1,15 @@
+#!/bin/bash
+
+IFS='/' read -r -a path_parts <<< "$PWD"
+file_name="${path_parts[-1]}.ino"
+project_name="${path_parts[-1]}"
+
+[[ -f "$PWD/$file_name" ]] || {
+	echo "File $PWD/$file_name does not exist!"
+	exit 1
+}
+
+arduino-cli compile -b "arduino:avr:uno" "$PWD" &&
+	arduino-cli upload --fqbn "arduino:avr:uno" --port "/dev/ttyACM0" "$project_name" &&
+	picocom /dev/ttyACM0 -b 9600
+

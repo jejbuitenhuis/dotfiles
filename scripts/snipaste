@@ -1,0 +1,12 @@
+#!/bin/bash
+
+rect=$(slop)
+sleep 0.1
+
+if [[ ! -z "$rect" ]]; then
+	read -r w h x y <<< "$(echo "$rect" | grep -Eo '[[:digit:]]+' | tr '\n' ' ')"
+	dest=$(mktemp /tmp/XXXXXXXX.png)
+	echo "$rect"
+	scrot -a "$x","$y","$w","$h" -o "$dest"
+	nohup feh -x --class "custom-float-no-border" --geometry "$rect" "$dest" > /dev/null 2>&1 &
+fi
