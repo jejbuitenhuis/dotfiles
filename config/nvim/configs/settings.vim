@@ -75,9 +75,6 @@ autocmd BufNewFile,BufRead *.y set ft=y
 set foldcolumn=1
 set foldmethod=marker
 
-" Highlight current line
-set cursorline
-
 " text can't be longer than 80 columns
 set colorcolumn=80
 
