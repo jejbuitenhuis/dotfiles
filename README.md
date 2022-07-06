@@ -14,3 +14,21 @@
 | Pink | ![#f2a2e5](https://via.placeholder.com/300x100/f2a2e5/?text=+) |
 | Cyan | ![#8af2ec](https://via.placeholder.com/300x100/8af2ec/?text=+) |
 | "White" | ![#ffe3ff](https://via.placeholder.com/300x100/ffe3ff/?text=+) |
+
+# VSCode extensions
+
+## Install all
+
+Run this in a terminal to install all VSCode extensions:
+
+```bash
+cat vscode/extensions.txt | xargs -L 1 code --install-extension
+```
+
+## Update extensions list
+
+Run this in a terminal to update the extensions list:
+
+```bash
+code --list-extensions | grep -Ev "$(find ./vscode/extensions/ -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | tr "\n" "|" | sed "s/|$//")" > vscode/extensions.txt
+```

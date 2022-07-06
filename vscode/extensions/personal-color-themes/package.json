@@ -1,0 +1,26 @@
+{
+    "name": "personal-color-themes",
+    "displayName": "Personal Color Themes",
+    "description": "A collection of color themes matching my computer themes.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.47.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "PCT - Mountain Fuji",
+                "uiTheme": "vs-dark",
+                "path": "./themes/PCT - Mountain Fuji-color-theme.json"
+            },
+            {
+                "label": "PCT - Flower with Leaves",
+                "uiTheme": "vs-dark",
+                "path": "./themes/PCT - Flower with Leaves-color-theme.json"
+            }
+        ]
+    }
+}

@@ -34,6 +34,18 @@
       path: config/autorandr/postswitch
       create: true
 
+    ~/.config/Code/User/:
+      path: config/Code/User/*
+      glob: true
+      create: true
+    ~/.vscode/extensions/personal-color-themes:
+      path: vscode/extensions/personal-color-themes/
+      # when more custom extensions are added, uncomment the `glob` line,
+      # change the extension name to just a `*` and remove the extension name
+      # from the link path (https://github.com/anishathalye/dotbot/issues/282)
+      # glob: true
+      create: true
+
 - shell:
   -
     command: chmod +x ~/.config/autorandr/postswitch
