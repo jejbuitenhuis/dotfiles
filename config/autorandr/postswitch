@@ -1,0 +1,8 @@
+#!/bin/bash
+
+theme="flower_with_leaves"
+
+feh --bg-fill --no-fehbg "$HOME/Pictures/Wallpapers/$theme.jpg"
+xkbcomp $HOME/.xkb/better_keys.xkb "$DISPLAY"
+$HOME/.config/polybar/launch.sh "$theme"
+

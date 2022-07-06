@@ -3,22 +3,39 @@
 - link:
     ~/.zshrc: zshrc
     ~/.p10k.zsh: p10k.zsh
+
     ~/.config/i3:
         path: config/i3/
         create: true
+
     ~/.config/dunst:
         path: config/dunst/
         create: true
+
     ~/.config/nvim:
         path: config/nvim/
         create: true
+
     ~/.config/polybar:
         path: config/polybar/
         create: true
+
     ~/.config/rofi:
         path: config/rofi/
         create: true
+
     ~/.config/picom.conf: config/picom.conf
+
     ~/scripts:
       path: scripts/
       create: true
+
+    ~/.config/autorandr/postswitch:
+      path: config/autorandr/postswitch
+      create: true
+
+- shell:
+  -
+    command: chmod +x ~/.config/autorandr/postswitch
+    stderr: true
+    description: Make autorandr postswitch executable
