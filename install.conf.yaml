@@ -1,4 +1,9 @@
-- clean: ['~']
+- clean:
+  - "~"
+  - "~/scripts"
+  - "~/.config"
+  - "~/.config/Code/User"
+  - ".vscode/extensions"
 
 - link:
     ~/.zshrc: zshrc
@@ -26,8 +31,9 @@
 
     ~/.config/picom.conf: config/picom.conf
 
-    ~/scripts:
-      path: scripts/
+    ~/scripts/:
+      path: scripts/*
+      glob: true
       create: true
 
     ~/.config/autorandr/postswitch:
