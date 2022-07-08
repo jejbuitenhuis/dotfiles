@@ -384,4 +384,5 @@
         }
     ],
     "editor.bracketPairColorization.enabled": false,
+    "emmet.useInlineCompletions": true,
 }
