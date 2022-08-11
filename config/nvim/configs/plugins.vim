@@ -62,7 +62,7 @@ Plug 'b0o/incline.nvim'
 Plug 'farmergreg/vim-lastplace'
 
 " Code completion and snippets
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'xavierd/clang_complete'
 Plug 'sirver/ultisnips'
 

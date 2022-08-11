@@ -306,6 +306,11 @@ hi def link jsxEqual htmlTag
 hi def link jsxTag htmlTag
 " }}}
 
+" https://github.com/neoclide/coc.nvim {{{
+call s:hi("CocSearch", { "fg": s:colors.pink })
+call s:hi("CocMenuSel", { "bg": s:colors.darker.black })
+" }}}
+
 " }}}
 
 set background=dark

@@ -46,8 +46,10 @@
 		"typeParameter": "\uf728",
 		"default": "\uf29c"
 	},
-	"suggest.enablePreview": true,
+	"suggest.minTriggerInputLength": 0,
+	"suggest.noselect": true,
 	"suggest.snippetsSupport": true,
+	"suggest.triggerAfterInsertEnter": true,
 	"typescript.inlayHints.enumMemberValues.enabled": true,
 	"typescript.inlayHints.functionLikeReturnTypes.enabled": true,
 	"typescript.inlayHints.parameterTypes.enabled": true,
