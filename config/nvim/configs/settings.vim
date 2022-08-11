@@ -92,6 +92,9 @@ set cmdheight=1
 let g:mapleader="\<Space>"
 let g:maplocalleader="\<Space>"
 
+" Ignore case when searching
+set ignorecase smartcase
+
 " Mark trailing whitespace with an error color
 call matchadd('Error', '\s\+$')
 " }}}
