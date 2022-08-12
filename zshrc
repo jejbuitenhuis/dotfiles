@@ -138,7 +138,7 @@ compdef g=git
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-export FZF_DEFAULT_COMMAND="fdfind '--exclude={.git,.idea,.vscode,.sass-cache,node_modules,build,tmp,*.o}' --type f"
+export FZF_DEFAULT_COMMAND="fdfind '--exclude={.git,.idea,.vscode,.sass-cache,node_modules,build,tmp,*.o}' --type f --hidden"
 export FZF_DEFAULT_OPTS="--no-mouse"
 export SPICETIFY_INSTALL="/home/joram/spicetify-cli"
 export MANPAGER='nvim +Man!'
