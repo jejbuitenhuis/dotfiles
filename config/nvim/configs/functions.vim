@@ -28,6 +28,7 @@ function! MoveFile(newLocation) " {{{
 
 	execute 'saveas' fnameescape(a:newLocation)
 	call delete(oldLocation)
+	execute 'bdelete' bufnr(oldLocation)
 endfunction
 
 command! -nargs=1 -complete=file -bar MoveFile call MoveFile('<args>')
