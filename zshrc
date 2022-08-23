@@ -119,6 +119,8 @@ alias cat=bat
 alias fd=fdfind
 alias docker='sudo docker'
 alias docker-compose='sudo docker-compose'
+alias c='xclip -selection clipboard'
+alias p='xclip -o'
 eval $(thefuck --alias)
 
 # from https://thoughtbot.com/upcase/videos/intro-to-dotfiles
