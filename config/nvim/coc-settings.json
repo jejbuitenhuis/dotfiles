@@ -7,15 +7,15 @@
 	"diagnostic.errorSign": "",
 	"diagnostic.warningSign": "",
 	"diagnostic.infoSign": "",
-	"diagnostic.hintSign": "",
+	"diagnostic.hintSign": "",
 	"javascript.inlayHints.enumMemberValues.enabled": true,
 	"javascript.inlayHints.functionLikeReturnTypes.enabled": true,
 	"javascript.inlayHints.parameterTypes.enabled": true,
 	"javascript.inlayHints.propertyDeclarationTypes.enabled": true,
 	"javascript.inlayHints.variableTypes.enabled": true,
 	"rust-analyzer.inlayHints.enable": true,
-	"rust-analyzer.inlayHints.chainingHints": true,
-	"rust-analyzer.inlayHints.closureReturnTypeHints": true,
+	"rust-analyzer.inlayHints.chainingHints.enable": true,
+	"rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
 	"rust-analyzer.inlayHints.refreshOnInsertMode": true,
 	"suggest.autoTrigger": "always",
 	"suggest.completionItemKindLabels": {
@@ -48,6 +48,7 @@
 	},
 	"suggest.minTriggerInputLength": 0,
 	"suggest.noselect": true,
+	"suggest.enablePreselect": false,
 	"suggest.snippetsSupport": true,
 	"suggest.triggerAfterInsertEnter": true,
 	"typescript.inlayHints.enumMemberValues.enabled": true,
@@ -55,5 +56,5 @@
 	"typescript.inlayHints.parameterTypes.enabled": true,
 	"typescript.inlayHints.propertyDeclarationTypes.enabled": true,
 	"typescript.inlayHints.variableTypes.enabled": true,
-	"vetur.format.enable": false
+	"volar.inlayHints.enable": true
 }
