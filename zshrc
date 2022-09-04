@@ -149,6 +149,9 @@ export EDITOR='nvim'
 export ANDROID_SDK_ROOT="/home/joram/Android/Sdk/"
 export NIX_SHELL_PRESERVE_PROMPT=1
 export SUDO_PROMPT=" password for %p: "
+export M2_HOME="/usr/local/apache-maven/apache-maven-3.8.6"
+export M2="$M2_HOME/bin"
+export MAVEN_OPTS="-Xms256m -Xmx512m"
 
 # Path stuff
 PATH="$PATH:/home/joram/scripts/"
@@ -159,6 +162,7 @@ PATH="$SPICETIFY_INSTALL:$PATH"
 PATH="$PATH:/usr/share/texlive/"
 PATH="$PATH:/home/joram/Android/Sdk/platform-tools/"
 PATH="$PATH:/opt/mssql-tools/bin"
+PATH="$PATH:$M2"
 
 # Nix path
 export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
