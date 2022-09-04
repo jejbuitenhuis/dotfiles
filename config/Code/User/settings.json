@@ -385,4 +385,5 @@
     ],
     "editor.bracketPairColorization.enabled": false,
     "emmet.useInlineCompletions": true,
+    "editor.stickyScroll.enabled": true,
 }
