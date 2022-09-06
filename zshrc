@@ -200,4 +200,6 @@ function wallpaper() {
 	feh --no-fehbg --bg-fill $1
 }
 
+[ -f "/home/joram/.ghcup/env" ] && source "/home/joram/.ghcup/env" # ghcup-env
+
 source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh

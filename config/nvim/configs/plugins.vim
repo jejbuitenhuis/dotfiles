@@ -82,6 +82,7 @@ Plug 'compnerd/arm64asm-vim'
 Plug 'vim-scripts/asmx86'
 Plug 'elkowar/yuck.vim'
 Plug 'LnL7/vim-nix'
+Plug 'neovimhaskell/haskell-vim'
 
 " Color schemes
 Plug 'joshdick/onedark.vim'

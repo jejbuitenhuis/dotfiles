@@ -56,5 +56,26 @@
 	"typescript.inlayHints.parameterTypes.enabled": true,
 	"typescript.inlayHints.propertyDeclarationTypes.enabled": true,
 	"typescript.inlayHints.variableTypes.enabled": true,
-	"volar.inlayHints.enable": true
+	"volar.inlayHints.enable": true,
+	"languageserver": {
+		"haskell": {
+			"command": "haskell-language-server-wrapper",
+			"args": [
+				"--lsp"
+			],
+			"rootPatterns": [
+				".stack.yaml",
+				"stack.yaml",
+				".hie-bios",
+				"BUILD.bazel",
+				"cabal.config",
+				"package.yaml"
+			],
+			"filetypes": [
+				"hs",
+				"lhs",
+				"haskell"
+			]
+		}
+	}
 }
