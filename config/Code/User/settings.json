@@ -386,4 +386,6 @@
     "editor.bracketPairColorization.enabled": false,
     "emmet.useInlineCompletions": true,
     "editor.stickyScroll.enabled": true,
+    "haskell.serverExecutablePath": "~/.ghcup/bin/haskell-language-server-wrapper",
+    "editor.wordWrap": "on",
 }
