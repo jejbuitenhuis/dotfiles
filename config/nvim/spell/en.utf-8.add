@@ -144,3 +144,6 @@ firestore
 keyof
 sqlx
 tikkie
+foldl
+foldr
+clazz
