@@ -114,7 +114,7 @@ autoload -Uz +X compinit && compinit
 # Aliases
 alias v=nvim
 alias ns=nix-shell
-alias bat=batcat
+# alias bat=batcat
 alias cat=bat
 alias fd=fdfind
 alias docker='sudo docker'
@@ -140,7 +140,7 @@ compdef g=git
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-export FZF_DEFAULT_COMMAND="fdfind '--exclude={.git,.idea,.vscode,.sass-cache,node_modules,build,tmp,*.o}' --type f --hidden"
+export FZF_DEFAULT_COMMAND="fdfind '--exclude={.git,.idea,.vscode,.sass-cache,node_modules,build,target,tmp,*.o}' --type f --hidden"
 export FZF_DEFAULT_OPTS="--no-mouse"
 export SPICETIFY_INSTALL="/home/joram/spicetify-cli"
 export MANPAGER='nvim +Man!'
@@ -169,7 +169,7 @@ export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/
 
 # Customize fzf-tab
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -A --color=always $realpath'
-zstyle ':fzf-tab:complete:nvim:*' fzf-preview 'batcat -p --color=always $realpath'
+zstyle ':fzf-tab:complete:nvim:*' fzf-preview 'bat -p --color=always $realpath'
 
 # Include hidden files in autocomplete
 _comp_options+=(globdots)
