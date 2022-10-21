@@ -21,13 +21,15 @@ i3lock --color="$background" \
 	--insidewrongcolor="$error" \
 	--ringwrongcolor="$error" \
 	--wrongcolor="$foreground" \
-	--line-uses-inside \
 	--keyhlcolor="$primary" \
 	--bshlcolor="$error" \
 	--separatorcolor="$primary" \
 	--timecolor="$foreground" \
 	--datecolor="$foreground" \
+	--line-uses-inside \
+	--radius 110 \
 	--timestr="%H:%M" \
+	--datestr="%A %d %b %Y" \
 	--indpos="x + w / 2:y + h / 2" &
 
 (while pidof i3lock; do
