@@ -6,11 +6,13 @@ require('nvim-treesitter.configs').setup({
 		"java",
 		"javascript",
 		"jsdoc",
-		"scss",
 		"typescript",
 		"yaml",
 	},
 	highlight = {
 		enable = true,
+		disable = {
+			"help", -- help colors aren't correct at the moment
+		},
 	},
 })

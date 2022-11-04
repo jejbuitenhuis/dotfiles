@@ -83,6 +83,7 @@ Plug 'lervag/vimtex'
 Plug 'jrozner/vim-antlr'
 
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+" Plug 'nvim-treesitter/playground'
 
 " Color schemes
 Plug 'joshdick/onedark.vim'
