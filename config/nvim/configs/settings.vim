@@ -81,10 +81,6 @@ set colorcolumn=80
 " Check open files for updates
 set autoread
 
-" Disable vim buildin spellcheck
-set nospell
-set spelllang=en,nl
-
 " Give more space for displaying messages
 set cmdheight=1
 
@@ -94,6 +90,9 @@ let g:maplocalleader="\<Space>"
 
 " Ignore case when searching
 set ignorecase smartcase
+
+" Disable mouse
+set mouse=
 
 " Mark trailing whitespace with an error color
 call matchadd('Error', '\s\+$')
@@ -331,4 +330,15 @@ let g:splitjoin_trailing_comma = 1
 let g:splitjoin_html_attributes_bracket_on_new_line = 1
 let g:splitjoin_java_argument_split_first_newline = 1
 let g:splitjoin_java_argument_split_last_newline  = 1
+" }}}
+
+" Spelunker {{{
+
+" Disable vim buildin spellcheck
+set nospell
+set spelllang=en,nl
+
+let g:spelunker_disable_uri_checking=1
+let g:spelunker_disable_email_checking=1
+let g:spelunker_spell_bad_group="SpellBad"
 " }}}
