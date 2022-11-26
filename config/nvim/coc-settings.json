@@ -1,6 +1,8 @@
 {
 	"clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/clangd",
+
 	"coc.preferences.bracketEnterImprove": false,
+
 	"diagnostic.refreshOnInsertMode": false,
 	"diagnostic.virtualText": true,
 	"diagnostic.virtualTextCurrentLineOnly": false,
@@ -8,15 +10,28 @@
 	"diagnostic.warningSign": "",
 	"diagnostic.infoSign": "",
 	"diagnostic.hintSign": "",
+
+	"inlayHint.refreshOnInsertMode": true,
+
+	"java.signatureHelp.enabled": true,
+	"java.completion.guessMethodArguments": false,
+
 	"javascript.inlayHints.enumMemberValues.enabled": true,
 	"javascript.inlayHints.functionLikeReturnTypes.enabled": true,
 	"javascript.inlayHints.parameterTypes.enabled": true,
 	"javascript.inlayHints.propertyDeclarationTypes.enabled": true,
 	"javascript.inlayHints.variableTypes.enabled": true,
-	"rust-analyzer.inlayHints.enable": true,
+
+	"rust-analyzer.imports.granularity.group": "crate",
+	"rust-analyzer.imports.group.enable": true,
 	"rust-analyzer.inlayHints.chainingHints.enable": true,
+	"rust-analyzer.inlayHints.closingBraceHints.enable": true,
+	"rust-analyzer.inlayHints.closingBraceHints.minLines": 25,
 	"rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
-	"rust-analyzer.inlayHints.refreshOnInsertMode": true,
+	"rust-analyzer.inlayHints.renderColons": true,
+	"rust-analyzer.inlayHints.typeHints.enable": true,
+	"rust-analyzer.updates.prompt": true,
+
 	"suggest.autoTrigger": "always",
 	"suggest.completionItemKindLabels": {
 		"keyword": "\uf1de",
@@ -51,12 +66,15 @@
 	"suggest.enablePreselect": false,
 	"suggest.snippetsSupport": true,
 	"suggest.triggerAfterInsertEnter": true,
+
 	"typescript.inlayHints.enumMemberValues.enabled": true,
 	"typescript.inlayHints.functionLikeReturnTypes.enabled": true,
 	"typescript.inlayHints.parameterTypes.enabled": true,
 	"typescript.inlayHints.propertyDeclarationTypes.enabled": true,
 	"typescript.inlayHints.variableTypes.enabled": true,
+
 	"volar.inlayHints.enable": true,
+
 	"languageserver": {
 		"haskell": {
 			"command": "haskell-language-server-wrapper",
