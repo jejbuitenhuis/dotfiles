@@ -7,7 +7,7 @@ STATE_CHARGING = "Charging\n"
 AMOUNT_GOOD = 75
 AMOUNT_ENOUGH = 50
 AMOUNT_MEDIUM = 25
-AMOUNT_LOW = 10
+AMOUNT_LOW = 20
 
 with open("/sys/class/power_supply/BAT0/capacity", 'r') as file_capacity:
     with open("/sys/class/power_supply/BAT0/status", 'r') as file_state:
