@@ -232,9 +232,7 @@ let g:skeleton_replacements_java = {}
 function! g:skeleton_replacements_java.PACKAGE()
 	let filePath = expand('%:h:r')
 	let filePath = substitute(filePath, "\/", ".", "g")
-	echom filePath
 	let filePath = substitute(filePath, "src\\.\\([A-Za-z]\\+\\.\\)\\{2\\}", "", "i")
-	echom filePath
 
 	return tolower(filePath)
 endfunction
