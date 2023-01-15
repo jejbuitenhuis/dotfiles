@@ -305,15 +305,17 @@ mode "$mode_screenshot" {
 
 bindsym $mod+s mode "$mode_screenshot"
 
+# Default border size
+for_window [class=.*] border pixel 2
+
 # Make popup windows floating
 for_window [window_role="pop-up"] floating enable, move position center
 for_window [class="^jetbrains-idea" title="win0"] floating enable, move position center
 for_window [title="Microsoft Teams Notification"] floating enable
+for_window [title="Picture-in-Picture"] floating enable, border pixel 0, sticky enable
 
 # For snipaste
 for_window [class="^custom-float-no-border$"] floating enable, border pixel 0
-
-for_window [class=.*] border pixel 2
 
 gaps outer 15
 gaps inner 5
