@@ -271,7 +271,7 @@ let g:UltiSnipsExpandTrigger = "<c-e>"
 let g:user_emmet_leader_key = "<c-l>"
 let g:user_emmet_install_global = 0
 
-autocmd FileType html,vue EmmetInstall
+autocmd FileType html,vue,typescriptreact EmmetInstall
 " }}}
 
 " i3config {{{
