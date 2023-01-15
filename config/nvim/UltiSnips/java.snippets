@@ -44,3 +44,17 @@ public String toString()
 	return "$0";
 } // }}}
 endsnippet
+
+snippet get "getter method" b
+${1:public} ${2:FieldType} get${4:Field}()
+{ // {{{
+	return this.`!p snip.rv = re.sub('([a-zA-Z])', lambda x: x.groups()[0].lower(), t[4], 1)`;
+} // }}}$0
+endsnippet
+
+snippet set "setter method" b
+${1:public} ${2:void} set${3:Field}(${4:FieldType} `!p snip.rv = re.sub('([a-zA-Z])', lambda x: x.groups()[0].lower(), t[3], 1)`)
+{ // {{{
+	this.`!p snip.rv = re.sub('([a-zA-Z])', lambda x: x.groups()[0].lower(), t[3], 1)` = `!p snip.rv = re.sub('([a-zA-Z])', lambda x: x.groups()[0].lower(), t[3], 1)`;
+} // }}}$0
+endsnippet
