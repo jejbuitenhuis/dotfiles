@@ -60,6 +60,9 @@ Plug 'tommcdo/vim-exchange'
 Plug 'b0o/incline.nvim'
 " Restore cursor in last position
 Plug 'farmergreg/vim-lastplace'
+" Plantuml preview
+Plug 'tyru/open-browser.vim', { 'for': 'plantuml' }
+Plug 'weirongxu/plantuml-previewer.vim', { 'for': 'plantuml' }
 
 " Code completion and snippets
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -81,6 +84,7 @@ Plug 'lervag/vimtex'
 Plug 'LnL7/vim-nix'
 " Plug 'neovimhaskell/haskell-vim'
 Plug 'jrozner/vim-antlr'
+Plug 'aklt/plantuml-syntax'
 
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 " Plug 'nvim-treesitter/playground'
