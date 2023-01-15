@@ -314,4 +314,3 @@ call s:hi("CocMenuSel", { "bg": s:colors.darker.black })
 " }}}
 
 set background=dark
-
