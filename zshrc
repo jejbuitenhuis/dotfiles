@@ -136,8 +136,10 @@ g() {
 # Complete `g` like `git`
 compdef g=git
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+if [ -z ${IN_NIX_SHELL+x} ]; then
+	export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+fi
 
 export FZF_DEFAULT_COMMAND="fdfind '--exclude={.git,.idea,.vscode,.sass-cache,node_modules,build,target,tmp,*.o}' --type f --hidden"
 export FZF_DEFAULT_OPTS="--no-mouse"
