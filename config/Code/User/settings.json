@@ -215,6 +215,7 @@
         "flexbox",
         "fontawesome",
         "fortawesome",
+        "FTP",
         "get",
         "get\\'s",
         "httponly",
@@ -388,4 +389,7 @@
     "editor.stickyScroll.enabled": true,
     "haskell.serverExecutablePath": "~/.ghcup/bin/haskell-language-server-wrapper",
     "editor.wordWrap": "on",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
 }
