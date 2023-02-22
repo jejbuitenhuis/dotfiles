@@ -1,0 +1,5 @@
+require "statusline"
+require "keybinds"
+require "settings"
+require "statusline"
+require "plugins"
