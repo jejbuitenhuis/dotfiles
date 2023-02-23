@@ -22,8 +22,10 @@ M.colors = {
 	},
 }
 
-function M.keybind(mode, key, action)
-	vim.keymap.set(mode, key, action, { noremap = true })
+function M.keybind(mode, key, action, options)
+	options = options or { noremap = true, silent = true }
+
+	vim.keymap.set(mode, key, action, options)
 end
 
 return M

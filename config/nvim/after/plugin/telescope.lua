@@ -14,6 +14,17 @@ telescope.setup({
 		mappings = {
 			i = {
 				["<esc>"] = actions.close,
+
+				["<CR>"] = actions.select_default,
+				["<c-v>"] = actions.select_vertical,
+				["<c-x>"] = actions.select_horizontal,
+				["<c-t>"] = actions.select_tab,
+
+				["<c-p>"] = actions.move_selection_previous,
+				["<c-n>"] = actions.move_selection_next,
+
+				["<c-Space>"] = actions.toggle_selection,
+				["<c-@>"] = actions.toggle_selection,
 			},
 		},
 	},
@@ -21,3 +32,4 @@ telescope.setup({
 
 util.keybind("n", "<c-k>", builtin.find_files)
 util.keybind("n", "<c-j>", builtin.buffers)
+util.keybind("n", "<leader>ff", builtin.live_grep)

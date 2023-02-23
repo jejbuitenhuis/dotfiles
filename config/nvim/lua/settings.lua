@@ -1,3 +1,5 @@
+local util = require "util"
+
 -- indentation
 vim.opt.autoindent = true
 vim.opt.expandtab = false
@@ -12,7 +14,7 @@ vim.opt.splitbelow = true
 vim.opt.mouse = nil
 
 -- folding
-vim.opt.foldcolumn = "1"
+vim.opt.foldcolumn = "auto:1"
 vim.opt.foldmethod = "marker"
 
 -- line numbers
@@ -78,6 +80,14 @@ vim.opt.conceallevel = 2
 vim.opt.colorcolumn = { 80 } -- show line at 80 characters
 vim.opt.scrolloff = 5
 
+-- leader {{{
+-- do this in vim, because with `vim.g.mapleader` space isn't recognised as the leader
+vim.cmd [[
+let g:mapleader = "\<Space>"
+let g:maplocalleader = "\<Space>"
+]]
+-- }}}
+
 -- hexokinase {{{
 -- these need to be set before hexokinase is loaded
 local ok, _ = pcall(require, "hexokinase")
@@ -87,3 +97,6 @@ if ok then
 	vim.g.Hexokinase_optInPatters = "full_hex,triple_hex,rgb,rgba,hsl,hsla,colour_names"
 end
 -- }}}
+
+-- quick scope
+vim.g.qs_highlight_on_keys = { "f", "F", "t", "T" }

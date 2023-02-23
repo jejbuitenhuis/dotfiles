@@ -29,6 +29,12 @@ return require("packer").startup( function(use)
 		run = "make hexokinase",
 	}
 
+	-- comments made easy
+	use "tpope/vim-commentary"
+
+	-- highlight `f` and `t` keys
+	use "unblevable/quick-scope"
+
 	-- syntax
 	use {
 		"nvim-treesitter/nvim-treesitter",
