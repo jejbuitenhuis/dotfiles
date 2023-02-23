@@ -41,11 +41,9 @@ local function current_file()
 end
 
 local function git()
-	-- TODO: why doesn't `vim.b.gitsigns_head` work?
-	local head = vim.api.nvim_command_output( 'echo get(b:, "gitsigns_head")' )
-	local changes = vim.api.nvim_command_output( 'echo get(b:, "gitsigns_status")' )
-
-	return block( string.format("%s %s", head, changes), 4 ) -- TODO: is this green?
+	-- TODO: do something with include spacing in the block function
+	return block( "%{trim(get(b:,'gitsigns_head','').' '.get(b:,'gitsigns_status',''))}", 4 )
+	-- return block( "%{get(b:,'gitsigns_head','')} %{get(b:,'gitsigns_status','')}", 4 )
 end
 
 local function lsp_status()
