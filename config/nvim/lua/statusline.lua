@@ -1,30 +1,30 @@
 Statusline = {}
 
 local modes = setmetatable({
-	["n"] = "NORMAL",
-	["no"] = "NORMAL",
-	["v"] = "VISUAL",
-	["V"] = "VISUAL LINE",
-	[""] = "VISUAL BLOCK",
-	["s"] = "SELECT",
-	["S"] = "SELECT LINE",
-	[""] = "SELECT BLOCK",
-	["i"] = "INSERT",
-	["ic"] = "INSERT",
-	["R"] = "REPLACE",
-	["Rv"] = "VISUAL REPLACE",
-	["c"] = "COMMAND",
+	["n"] = "󰇀 NORMAL",
+	["no"] = "󰇀 NORMAL",
+	["v"] = "󰒉 VISUAL",
+	["V"] = "󰒉 VISUAL LINE",
+	[""] = "󰒉 VISUAL BLOCK",
+	["s"] = "󰒉 SELECT",
+	["S"] = "󰒉 SELECT LINE",
+	[""] = "󰒉 SELECT BLOCK",
+	["i"] = " INSERT",
+	["ic"] = " INSERT",
+	["R"] = " REPLACE",
+	["Rv"] = " VISUAL REPLACE",
+	["c"] = " COMMAND",
 	["cv"] = "VIM EX",
 	["ce"] = "EX",
 	["r"] = "PROMPT",
-	["rm"] = "MOAR",
-	["r?"] = "CONFIRM",
-	["!"] = "SHELL",
-	["t"] = "TERMINAL",
+	["rm"] = "MORE",
+	["r?"] = " CONFIRM",
+	["!"] = " SHELL",
+	["t"] = " TERMINAL",
 }, {
 	-- prevent errors when no matching mode is found
 	__index = function()
-		return "UNKNOWN"
+		return " UNKNOWN"
 	end
 })
 
@@ -48,7 +48,7 @@ local function current_mode()
 end
 
 local function current_file()
-	return block("%<%f%m", 6)
+	return block(" %<%f%m", 6)
 end
 
 local function git()
@@ -58,7 +58,9 @@ local function git()
 		return ""
 	end
 
-	local content = { git.head }
+	local content = {
+		table.concat({ " ", git.head })
+	}
 
 	if git.added and git.added ~= 0 then
 		table.insert( content, string.format("+%d", git.added) )
@@ -79,11 +81,11 @@ end
 
 local function lsp_status()
 	-- TODO:
-	return block("offline", 2)
+	return block(" offline", 2)
 end
 
 local function lsp_errors()
-	return block("offline", 3)
+	return block(" offline", 3)
 end
 
 function Statusline.get()
