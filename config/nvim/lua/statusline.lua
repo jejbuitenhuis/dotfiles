@@ -1,4 +1,6 @@
-local modes = {
+Statusline = {}
+
+local modes = setmetatable({
 	["n"] = "NORMAL",
 	["no"] = "NORMAL",
 	["v"] = "VISUAL",
@@ -19,7 +21,16 @@ local modes = {
 	["r?"] = "CONFIRM",
 	["!"] = "SHELL",
 	["t"] = "TERMINAL",
-}
+}, {
+	-- prevent errors when no matching mode is found
+	__index = function()
+		return "UNKNOWN"
+	end
+})
+
+local function block_without_spacing(content, color)
+	return string.format("%%%d*%s%%0*", color, content)
+end
 
 local function block(content, color)
 	if #content == 0 then
@@ -41,9 +52,29 @@ local function current_file()
 end
 
 local function git()
-	-- TODO: do something with include spacing in the block function
-	return block( "%{trim(get(b:,'gitsigns_head','').' '.get(b:,'gitsigns_status',''))}", 4 )
-	-- return block( "%{get(b:,'gitsigns_head','')} %{get(b:,'gitsigns_status','')}", 4 )
+	local git = vim.b.gitsigns_status_dict
+
+	if not git or git.head == "" then
+		return ""
+	end
+
+	local content = { git.head }
+
+	if git.added and git.added ~= 0 then
+		table.insert( content, string.format("+%d", git.added) )
+	end
+
+	if git.changed and git.changed ~= 0 then
+		table.insert( content, string.format("~%d", git.changed) )
+	end
+
+	if git.removed and git.removed ~= 0 then
+		table.insert( content, string.format("-%d", git.removed) )
+	end
+
+	local content = table.concat(content, " ")
+
+	return block( string.format("%%{trim('%s')}", content), 4 )
 end
 
 local function lsp_status()
@@ -55,17 +86,22 @@ local function lsp_errors()
 	return block("offline", 3)
 end
 
-local function statusline()
-	return string.format(
-		"%s%s%s %%= %s%s",
-
+function Statusline.get()
+	local left = {
 		current_mode(),
 		current_file(),
 		git(),
-		
+	}
+	local right = {
 		lsp_status(),
 		lsp_errors()
-	)
+	}
+
+	return table.concat({
+		table.concat(left, ""),
+		"%=",
+		table.concat(right, ""),
+	})
 end
 
-vim.o.statusline = statusline()
+vim.o.statusline = "%!v:lua.Statusline.get()"
