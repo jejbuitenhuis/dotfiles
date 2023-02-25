@@ -10,6 +10,7 @@ return require("packer").startup( function(use)
 		"lewis6991/gitsigns.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
 	}
+	use "tpope/vim-fugitive"
 
 	-- surround motions with braces etc
 	use "tpope/vim-surround"
@@ -34,6 +35,9 @@ return require("packer").startup( function(use)
 
 	-- highlight `f` and `t` keys
 	use "unblevable/quick-scope"
+
+	-- scroll to the line were the file was closed the last time
+	use "farmergreg/vim-lastplace"
 
 	-- syntax
 	use {

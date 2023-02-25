@@ -119,10 +119,20 @@ _G.packer_plugins = {
     path = "/home/joram/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
   },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/joram/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
+  },
   ["vim-hexokinase"] = {
     loaded = true,
     path = "/home/joram/.local/share/nvim/site/pack/packer/start/vim-hexokinase",
     url = "https://github.com/rrethy/vim-hexokinase"
+  },
+  ["vim-lastplace"] = {
+    loaded = true,
+    path = "/home/joram/.local/share/nvim/site/pack/packer/start/vim-lastplace",
+    url = "https://github.com/farmergreg/vim-lastplace"
   },
   ["vim-surround"] = {
     loaded = true,
