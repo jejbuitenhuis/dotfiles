@@ -1,5 +1,6 @@
 require "statusline"
 require "keybinds"
 require "settings"
+require "tabline"
 require "statusline"
 require "plugins"
