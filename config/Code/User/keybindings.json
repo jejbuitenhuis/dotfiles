@@ -129,5 +129,9 @@
     {
         "key": "ctrl+u",
         "command": "editor.emmet.action.updateTag"
+    },
+    {
+        "key": "ctrl+q",
+        "command": "editor.emmet.action.wrapWithAbbreviation"
     }
 ]

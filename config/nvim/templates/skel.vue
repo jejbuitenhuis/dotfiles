@@ -4,10 +4,7 @@
 	</div>
 </template>
 
-<script>
-export default {
-	name: "@BASENAME@",
-};
+<script setup>
 </script>
 
 <style lang="scss" scoped>

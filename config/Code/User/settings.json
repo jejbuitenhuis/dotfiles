@@ -2,17 +2,19 @@
     "workbench.startupEditor": "newUntitledFile",
     "editor.fontFamily": "'FantasqueSansMono Nerd Font Mono', 'Iosevka Curly', 'FiraCode Nerd Font Mono'",
     "editor.tokenColorCustomizations": {
-        "textMateRules": [{
-            "scope": [
-                "entity.name.type.class",
-                "entity.other.inherited-class",
-                "entity.name.type.instance",
-                "entity.name.type"
-            ],
-            "settings": {
-                "fontStyle": "underline"
+        "textMateRules": [
+            {
+                "scope": [
+                    "entity.name.type.class",
+                    "entity.other.inherited-class",
+                    "entity.name.type.instance",
+                    "entity.name.type"
+                ],
+                "settings": {
+                    "fontStyle": "underline"
+                }
             }
-        }],
+        ],
         "[Deepdark Material Theme | Full Black Version]": {
             "variables": "#8CDAFF",
             "comments": {
@@ -33,19 +35,19 @@
                 {
                     "scope": "new.expr entity.name.type.js",
                     "settings": {
-                        "foreground": "#b8fcb1",
+                        "foreground": "#b8fcb1"
                     }
                 },
                 {
                     "scope": "variable.other.php",
                     "settings": {
-                        "foreground": "#8cdaff",
+                        "foreground": "#8cdaff"
                     }
                 },
                 {
                     "scope": "punctuation.definition.variable.php",
                     "settings": {
-                        "foreground": "#fffb2a",
+                        "foreground": "#fffb2a"
                     }
                 }
             ]
@@ -70,19 +72,19 @@
                 {
                     "scope": "new.expr entity.name.type.js",
                     "settings": {
-                        "foreground": "#b8fcb1",
+                        "foreground": "#b8fcb1"
                     }
                 },
                 {
                     "scope": "variable.other",
                     "settings": {
-                        "foreground": "#FF0000",
+                        "foreground": "#FF0000"
                     }
                 },
                 {
                     "scope": "punctuation.definition.variable.php",
                     "settings": {
-                        "foreground": "#fffb2a",
+                        "foreground": "#fffb2a"
                     }
                 }
             ]
@@ -122,7 +124,7 @@
             "errorLens.hintForeground": "#9cffbb",
             "errorLens.statusBarHintForeground": "#9cffbb",
 
-            "editorRuler.foreground": "#4C4E73",
+            "editorRuler.foreground": "#4C4E73"
         },
         "[PCT - Flower with Leaves]": {
             "inlineparameters.annotationBackground": "#333333",
@@ -138,11 +140,11 @@
             "errorLens.statusBarInfoForeground": "#96c7f2",
             "errorLens.hintBackground": "#a2f28a3f",
             "errorLens.hintForeground": "#a2f28a",
-            "errorLens.statusBarHintForeground": "#a2f28a",
+            "errorLens.statusBarHintForeground": "#a2f28a"
         },
         "[Ayu Dark Bordered]": {
-            "inlineparameters.annotationBackground": "#1D2330",
-        },
+            "inlineparameters.annotationBackground": "#1D2330"
+        }
     },
     "trailing-spaces.backgroundColor": "#f99f9b",
     "workbench.iconTheme": "material-icon-theme",
@@ -150,9 +152,7 @@
     "editor.minimap.maxColumn": 80,
     "editor.minimap.renderCharacters": false,
     "todo-tree.highlights.enabled": false,
-    "todo-tree.filtering.excludeGlobs": [
-        "**/node_modules/**"
-    ],
+    "todo-tree.filtering.excludeGlobs": ["**/node_modules/**"],
     "liveSassCompile.settings.showOutputWindow": false,
     "liveSassCompile.settings.generateMap": false,
     "liveSassCompile.settings.formats": [
@@ -167,10 +167,7 @@
         ".vscode/**",
         "**/colors/**"
     ],
-    "liveSassCompile.settings.autoprefix": [
-        "> 1%",
-        "last 2 versions"
-    ],
+    "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
     "liveServer.settings.donotShowInfoMsg": true,
     "liveServer.settings.donotVerifyTags": true,
     "liveServer.settings.host": "localhost",
@@ -188,7 +185,7 @@
     "files.enableTrash": false,
     "files.exclude": {
         "**/*.o": true,
-        "**/node_modules": true
+        "**/node_modules": false
     },
     "material-icon-theme.hidesExplorerArrows": true,
     "jsannotations.fontWeight": "300",
@@ -279,7 +276,7 @@
     "workbench.editorAssociations": {
         "*.woff": "default"
     },
-	"editor.linkedEditing": true,
+    "editor.linkedEditing": true,
     "zenMode.hideLineNumbers": false,
     "vim.foldfix": true,
     "vim.highlightedyank.enable": true,
@@ -302,7 +299,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[vue]": {
-        "editor.defaultFormatter": "octref.vetur"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
     "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
@@ -318,12 +315,8 @@
     "color-highlight.matchWords": true,
     "editor.colorDecorators": false,
     "editor.lineHeight": 24,
-    "breadcrumbs.filePath": "last",
     "editor.insertSpaces": false,
-    "emmet.excludeLanguages": [
-        "css", "scss", "sass", "less",
-        "markdown",
-    ],
+    "emmet.excludeLanguages": ["css", "scss", "sass", "less", "markdown"],
     "todo-tree.tree.showScanModeButton": false,
     "editor.cursorSurroundingLines": 5,
     "trailing-spaces.highlightCurrentLine": false,
@@ -339,9 +332,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "discord.workspaceElapsedTime": true,
-    "editor.rulers": [
-        80,
-    ],
+    "editor.rulers": [80],
     "C_Cpp.vcFormat.newLine.beforeOpenBrace.block": "newLine",
     "C_Cpp.vcFormat.newLine.beforeOpenBrace.function": "newLine",
     "C_Cpp.vcFormat.newLine.beforeOpenBrace.namespace": "newLine",
@@ -359,13 +350,12 @@
     "keyboard.dispatch": "keyCode",
     "vim.leader": "\\<space>",
     "vim.neovimConfigPath": "$HOME/.config/nvim/init.vim",
-    "editor.lineNumbers": "relative",
     "editor.fontSize": 16,
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "prettier.useTabs": true,
-    "workbench.colorTheme": "PCT - Flower with Leaves",
+    "workbench.colorTheme": "Red One Dark Pro | Dark",
     "editor.quickSuggestions": {
         "other": "on",
         "comments": "off",
@@ -392,4 +382,7 @@
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "git.openRepositoryInParentFolders": "never",
+    "redhat.telemetry.enabled": false,
+    "window.zoomLevel": -1
 }

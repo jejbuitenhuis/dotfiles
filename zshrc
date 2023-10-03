@@ -75,7 +75,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(fzf-tab nix-shell zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(fzf-tab nix-shell zsh-nvm zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,6 +108,9 @@ source $ZSH/oh-my-zsh.sh
 # https://stackoverflow.com/a/58517668/9946744
 autoload -Uz +X compinit && compinit
 
+# AWS autocomplete
+complete -C '~/.local/bin/aws_completer' aws
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -117,8 +120,6 @@ alias ns=nix-shell
 # alias bat=batcat
 alias cat=bat
 alias fd=fdfind
-alias docker='sudo docker'
-alias docker-compose='sudo docker-compose'
 alias c='xclip -selection clipboard'
 alias p='xclip -o'
 
@@ -201,6 +202,28 @@ function wallpaper() {
 	feh --no-fehbg --bg-fill $1
 }
 
+# time output
+TIMEFMT='   ---===---   TIME RESULTS   ---===---'$'\n'\
+$'\e[33m''%J   '$'\e[34m''%U '$'\e[0m''user '$'\e[34m''%S '$'\e[0m''system '$'\e[34m''%P '$'\e[0m''cpu '$'\e[34m''%*E '$'\e[0m''total'$'\n'\
+'avg shared (code):         '$'\e[34m''%X KB'$'\e[0m\n'\
+'avg unshared (data/stack): '$'\e[34m''%D KB'$'\e[0m\n'\
+'total (sum):               '$'\e[34m''%K KB'$'\e[0m\n'\
+'max memory:                '$'\e[34m''%M '$MAX_MEMORY_UNITS''$'\e[0m\n'\
+'page faults from disk:     '$'\e[34m''%F'$'\e[0m\n'\
+'other page faults:         '$'\e[34m''%R'$'\e[0m'
+
 [ -f "/home/joram/.ghcup/env" ] && source "/home/joram/.ghcup/env" # ghcup-env
 
 source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+
+# pnpm
+export PNPM_HOME="/home/joram/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

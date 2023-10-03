@@ -1,9 +1,7 @@
 import React from "react";
 
-const @COMPONENT_NAME@ = () => {
+export default function @COMPONENT_NAME@(): JSX.Element {
 	return (
 		@CURSOR@
 	);
-};
-
-export default @COMPONENT_NAME@;
+}

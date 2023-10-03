@@ -26,7 +26,8 @@ set $cmd_music_playpause dbus-send --print-reply --dest=org.mpris.MediaPlayer2.s
 set $cmd_exit i3-msg exit
 set $cmd_lock $HOME/.config/i3/scripts/lock.sh
 set $cmd_reboot reboot
-set $cmd_suspend sudo pm-suspend
+# set $cmd_suspend sudo pm-suspend
+set $cmd_suspend systemctl suspend
 set $cmd_shutdown shutdown now
 
 set $prg_browser firefox
@@ -99,7 +100,7 @@ bindsym $mod+b split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+shift+f fullscreen toggle
+bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+q layout stacking
