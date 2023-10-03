@@ -2,6 +2,11 @@ local a = vim.api
 local f = vim.fn
 
 -- floating statuslines {{{
+local FILES_WHICH_REQUIRE_MORE_INFO = {
+	["index"] = true,
+	["mod"] = true,
+}
+
 -- render function {{{
 local function incline_render(render_props)
 	local buffer = render_props.buf
@@ -15,7 +20,10 @@ local function incline_render(render_props)
 		res = res .. "[-]"
 	end
 
-	if f.fnamemodify(file_path, ":t:r") == "index" then
+	local file_name = f.fnamemodify(file_path, ":t:r")
+
+	-- https://stackoverflow.com/a/33606621/9946744
+	if FILES_WHICH_REQUIRE_MORE_INFO[file_name] then
 		-- get the first folder the file is in (:p:h:t), but we want it
 		-- relative to the project root, so we use :. to get it relative
 		local folder = f.fnamemodify(file_path, ":p:.:h:t")
