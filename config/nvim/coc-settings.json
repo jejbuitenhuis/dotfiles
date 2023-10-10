@@ -15,6 +15,7 @@
 
 	"java.signatureHelp.enabled": true,
 	"java.completion.guessMethodArguments": false,
+	"java.jdt.ls.lombokSupport.enabled": true,
 
 	"javascript.inlayHints.enumMemberValues.enabled": true,
 	"javascript.inlayHints.functionLikeReturnTypes.enabled": true,

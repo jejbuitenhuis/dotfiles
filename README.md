@@ -32,3 +32,7 @@ Run this in a terminal to update the extensions list:
 ```bash
 code --list-extensions | grep -Ev "$(find ./vscode/extensions/ -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | tr "\n" "|" | sed "s/|$//")" > vscode/extensions.txt
 ```
+
+# Enabling Lombok support in coc-java
+
+Download a [Lombok jar](https://projectlombok.org/download) and place it in `~/.config/coc/extensions/node_modules/coc-java/lombok/lombok-X.X.X.jar`.
