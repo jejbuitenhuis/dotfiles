@@ -271,7 +271,7 @@ let g:UltiSnipsExpandTrigger = "<c-e>"
 let g:user_emmet_leader_key = "<c-l>"
 let g:user_emmet_install_global = 0
 
-autocmd FileType html,vue,typescriptreact EmmetInstall
+autocmd FileType html,xml,vue,typescriptreact EmmetInstall
 " }}}
 
 " i3config {{{
@@ -290,9 +290,9 @@ let g:cpp_class_decl_highlight = 1
 
 " html autoclose tags {{{
 let g:closetag_emptyTags_caseSensitive = 1
-let g:closetag_filenames = '*.html,*.phtml,*.vue'
+let g:closetag_filenames = '*.html,*.phtml,*.xml,*.vue'
 let g:closetag_xhtml_filenames = '*.xml,*.xhtml,*.jsx,*.tsx'
-let g:closetag_filetypes = 'html,phtml,vue'
+let g:closetag_filetypes = 'html,phtml,xml,vue'
 let g:closetag_xhtml_filetypes = 'xml,xhtml,jsx,tsx'
 " }}}
 
