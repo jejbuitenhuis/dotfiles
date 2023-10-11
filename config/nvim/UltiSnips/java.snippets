@@ -1,5 +1,5 @@
 snippet class "Create an empty class" b
-public class ${1:ClassName}$2
+public class ${1:ClassName}
 {
 	$0
 }
@@ -57,4 +57,24 @@ ${1:public} ${2:void} set${3:Field}(${4:FieldType} `!p snip.rv = re.sub('([a-zA-
 { // {{{
 	this.`!p snip.rv = re.sub('([a-zA-Z])', lambda x: x.groups()[0].lower(), t[3], 1)` = `!p snip.rv = re.sub('([a-zA-Z])', lambda x: x.groups()[0].lower(), t[3], 1)`;
 } // }}}$0
+endsnippet
+
+snippet test "Create a unittest method" b
+@Test
+public void test_${1:test_name}()
+{ // {{{
+	$0
+} // }}}
+endsnippet
+
+snippet aaat "Create a unittest method with the Arrange, Act, Assert method" b
+@Test
+public void test_${1:test_name}()
+{ // {{{
+	// Arrange
+	$0
+
+	// Act
+	// Assert
+} // }}}
 endsnippet
