@@ -171,7 +171,7 @@ let g:Hexokinase_optInPatters = 'full_hex,triple_hex,rgb,rgba,hsl,hsla,colour_na
 " Indent line {{{
 let g:indentLine_setConceal = 0
 let g:indentLine_defaultGroup = 'Comment'
-let g:indentLine_char = '¦'
+let g:indentLine_char = '│'
 " }}}
 
 " javascript bundle {{{
