@@ -355,7 +355,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "prettier.useTabs": true,
-    "workbench.colorTheme": "Red One Dark Pro | Dark",
+    "workbench.colorTheme": "Red One Dark Pro | Mirage",
     "editor.quickSuggestions": {
         "other": "on",
         "comments": "off",
