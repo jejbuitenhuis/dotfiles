@@ -148,3 +148,6 @@ foldl
 foldr
 clazz
 stringify
+refenreces
+cascase
+smallint
