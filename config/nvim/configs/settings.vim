@@ -52,8 +52,8 @@ set ff=unix
 " open split windows on the right side or on the bottom
 set splitright splitbelow
 
-" Center cursor
-set scrolloff=999
+" Leave some lines where the cursor can't come
+set scrolloff=5
 
 " Conceal settings
 set conceallevel=2
