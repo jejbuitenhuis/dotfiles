@@ -23,6 +23,11 @@
 	"javascript.inlayHints.propertyDeclarationTypes.enabled": true,
 	"javascript.inlayHints.variableTypes.enabled": true,
 
+	"json.schemas": [{
+		"fileMatch": [ "*.asl.json" ],
+		"url": "https://raw.githubusercontent.com/ChristopheBougere/asl-validator/main/src/schemas/state-machine.json"
+	}],
+
 	"rust-analyzer.imports.granularity.group": "crate",
 	"rust-analyzer.imports.group.enable": true,
 	"rust-analyzer.inlayHints.chainingHints.enable": true,
