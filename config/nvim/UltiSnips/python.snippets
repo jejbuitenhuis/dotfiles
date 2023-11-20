@@ -1,0 +1,18 @@
+snippet aws_lambda "AWS lambda template" b
+from aws_xray_sdk.core import patch_all
+import boto3
+import json
+import logging
+
+LOGGER = logging.getLogger()
+LOGGER.setLevel(logging.INFO)
+
+patch_all()
+
+def ${1:handler}(event, context):
+	$0
+endsnippet
+
+snippet aws_param "AWS Parameter Store get parameter" b
+${1:PARAMETER} = ${2:SSM}.get_parameter(Name="${3:/parameter/name}")["Parameter"]["Value"]
+endsnippet
