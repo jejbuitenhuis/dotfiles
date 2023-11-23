@@ -72,7 +72,7 @@ autocmd BufNewFile,BufRead *.asm set ft=nasm
 autocmd BufNewFile,BufRead *.y set ft=y
 
 " Show folds in sidebar
-set foldcolumn=1
+set foldcolumn=auto:1
 set foldmethod=marker
 
 " text can't be longer than 80 columns
