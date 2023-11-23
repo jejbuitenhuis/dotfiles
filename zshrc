@@ -123,6 +123,8 @@ alias fd=fdfind
 alias c='xclip -selection clipboard'
 alias p='xclip -o'
 
+alias ufw="sudo ufw"
+
 # from https://thoughtbot.com/upcase/videos/intro-to-dotfiles
 # No arguments: `git status`
 # With arguments: acts like `git`
