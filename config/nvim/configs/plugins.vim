@@ -1,4 +1,6 @@
 call plug#begin( stdpath('data') . '/plugged' )
+" Needed for some plugins
+Plug 'nvim-lua/plenary.nvim'
 " Color visualizer (installed GO)
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase'  }
 " Comment stuff
@@ -44,16 +46,15 @@ Plug 'vim-scripts/DoxygenToolkit.vim', { 'for': 'cpp' }
 Plug 'Yggdroot/indentLine'
 " Git in vim
 Plug 'tpope/vim-fugitive'
-" Git diff
-Plug 'nvim-lua/plenary.nvim'
+" Git diff (needs plenary)
 Plug 'sindrets/diffview.nvim'
+" Git diff signs in sign column
+Plug 'lewis6991/gitsigns.nvim'
 " Live markdown preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 " Execute sql to a server
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
-" Show git blame behind current line
-Plug 'APZelos/blamer.nvim'
 " Swap text with cx
 Plug 'tommcdo/vim-exchange'
 " Open file text on window separator

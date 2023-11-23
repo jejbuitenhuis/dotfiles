@@ -1,3 +1,11 @@
+local UTIL = {}
+
+function UTIL.keybind(mode, key, action, options)
+	options = options or { noremap = true, silent = true }
+
+	vim.keymap.set(mode, key, action, options)
+end
+
 local a = vim.api
 local f = vim.fn
 
@@ -56,5 +64,49 @@ require('incline').setup({
 	hide = {
 		only_win = "count_ignored",
 	},
+})
+-- }}}
+
+-- git diff in sign column {{{
+local gitsigns = require("gitsigns")
+
+local GITSIGNS_KEY_PREFIX = "<leader>g"
+
+gitsigns.setup({
+	signs = {
+		add = { text = "│" },
+		change = { text = "│" },
+		delete = { text = "_" },
+		topdelete = { text = "‾" },
+		changedelete = { text = "~" },
+		untracked = { text = "┆" },
+	},
+	signcolumn = true,
+	numhl = false,
+	linehl = false,
+	word_diff = false,
+	watch_gitdir = {
+		enable = true,
+		interval = 1000,
+		follow_files = true,
+	},
+	current_line_blame = true,
+	current_line_blame_opts = {
+		virt_text = true,
+		virt_text_pos = "eol",
+		delay = 250,
+	},
+	current_line_blame_formatter = " ‣ <author>, <author_time:%Y-%m-%d> - <summary>",
+
+	on_attach = function()
+		UTIL.keybind("n", "[h", gitsigns.prev_hunk)
+		UTIL.keybind("n", "]h", gitsigns.next_hunk)
+
+		UTIL.keybind("n", GITSIGNS_KEY_PREFIX .. "b", gitsigns.blame_line)
+		UTIL.keybind("n", GITSIGNS_KEY_PREFIX .. "B", function() gitsigns.blame_line({ full = true }) end)
+
+		UTIL.keybind("n", GITSIGNS_KEY_PREFIX .. "r", gitsigns.reset_hunk)
+		UTIL.keybind("v", GITSIGNS_KEY_PREFIX .. "r", function() gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") }) end)
+	end,
 })
 -- }}}

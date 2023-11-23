@@ -11,7 +11,8 @@ set shortmess+=c
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 " Recently vim can merge signcolumn and number column into one
-set signcolumn=number
+" set signcolumn=number
+set signcolumn=auto
 
 function! s:check_back_space() abort
 	let col = col('.') - 1
