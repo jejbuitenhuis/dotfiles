@@ -384,5 +384,22 @@
     },
     "git.openRepositoryInParentFolders": "never",
     "redhat.telemetry.enabled": false,
-    "window.zoomLevel": -1
+    "window.zoomLevel": -1,
+    "editor.wordBasedSuggestionsMode": "allDocuments",
+    "[python]": {
+        "editor.wordBasedSuggestions": true
+    },
+    "[cpp]": {
+        "editor.wordBasedSuggestions": true
+    },
+    "[cuda-cpp]": {
+        "editor.wordBasedSuggestions": true
+    },
+    "[c]": {
+        "editor.wordBasedSuggestions": true
+    },
+    "editor.lineNumbers": "relative",
+    "[c][cpp][cuda-cpp][python]": {
+        "editor.wordBasedSuggestions": "matchingDocuments"
+    }
 }
