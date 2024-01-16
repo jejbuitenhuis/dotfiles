@@ -1,0 +1,9 @@
+snippet aws_ssm "Create SAM parameter store" b
+${1:ParameterName}: # {{{
+Type: AWS::SSM::Parameter
+Properties:
+  Name: ${2:/parameter/name}
+  Type: ${3:String}
+  Value: ${4:Value}
+# }}}$0
+endsnippet
