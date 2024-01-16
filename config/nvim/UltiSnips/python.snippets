@@ -16,3 +16,46 @@ endsnippet
 snippet aws_param "AWS Parameter Store get parameter" b
 ${1:PARAMETER} = ${2:SSM}.get_parameter(Name="${3:/parameter/name}")["Parameter"]["Value"]
 endsnippet
+
+snippet aws_statuses "Functions to make returning HTTP status codes easier" b
+# Status functions {{{
+def ok(data: dict) -> dict:
+	return {
+		"statusCode": 200,
+		"body": json.dumps(data),
+	}
+
+def created() -> dict:
+	return {
+		"statusCode": 201,
+		"body": None,
+	}
+
+def bad_request(data: dict) -> dict:
+	return {
+		"statusCode": 400,
+		"body": json.dumps(data),
+	}
+
+def not_found(data: dict) -> dict:
+	return {
+		"statusCode": 404,
+		"body": json.dumps(data),
+	}
+# }}}
+endsnippet
+
+snippet aws_status_func "Custom function to make returning HTTP status codes easier" b
+def ${1:http_status_name}(data: dict) -> dict:
+	return {
+		"statusCode": ${2:http_status_code},
+		"body": json.dumps(data),
+	}$0
+endsnippet
+
+snippet aws_http "Return HTTP response" b
+return {
+	"statusCode": ${1:200},
+	"body": json.dumps(${2:None})
+}$0
+endsnippet
