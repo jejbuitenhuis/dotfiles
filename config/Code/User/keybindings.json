@@ -1,26 +1,6 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
     {
-        "key": "ctrl+h",
-        "command": "cursorLeft",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "ctrl+j",
-        "command": "cursorDown",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "ctrl+k",
-        "command": "cursorUp",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "ctrl+l",
-        "command": "cursorRight",
-        "when": "textInputFocus"
-    },
-    {
         "key": "ctrl+shift+k",
         "command": "editor.action.addSelectionToNextFindMatch",
         "when": "editorFocus"
@@ -31,11 +11,6 @@
         "when": "editorFocus"
     },
     {
-        "key": "ctrl+d",
-        "command": "editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
         "key": "ctrl+shift+k",
         "command": "-editor.action.deleteLines",
         "when": "textInputFocus && !editorReadonly"
@@ -43,10 +18,6 @@
     {
         "key": "ctrl+t",
         "command": "-workbench.action.showAllSymbols"
-    },
-    {
-        "key": "ctrl+t",
-        "command": "workbench.action.terminal.toggleTerminal"
     },
     {
         "key": "ctrl+`",
@@ -109,11 +80,6 @@
         "when": "terminalFocus && terminalProcessSupported && resourceScheme == 'vscode-terminal'"
     },
     {
-        "key": "ctrl+w",
-        "command": "deleteWordLeft",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
         "key": "ctrl+shift+w",
         "command": "-workbench.action.closeWindow"
     },
@@ -127,11 +93,12 @@
         "when": "textInputFocus"
     },
     {
-        "key": "ctrl+u",
-        "command": "editor.emmet.action.updateTag"
-    },
-    {
         "key": "ctrl+q",
         "command": "editor.emmet.action.wrapWithAbbreviation"
+    },
+    {
+        "key": "shift+k",
+        "command": "editor.action.showHover",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Normal' && !inDebugRepl"
     }
 ]
