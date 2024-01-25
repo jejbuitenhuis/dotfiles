@@ -27,18 +27,8 @@ endif
 " }}}
 
 " line_numbers {{{
-let no_line_numbers = [ 'help', 'dbui' ]
-
-if index(no_line_numbers, &ft) < 0
-	set nu rnu
-	set numberwidth=4
-
-	augroup numbertoggle
-		autocmd!
-		autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-		autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-	augroup END
-endif
+set nu rnu
+set numberwidth=4
 " }}}
 
 " standard settings {{{
