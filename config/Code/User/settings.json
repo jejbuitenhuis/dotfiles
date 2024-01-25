@@ -382,7 +382,6 @@
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "git.openRepositoryInParentFolders": "never",
     "redhat.telemetry.enabled": false,
     "window.zoomLevel": -1,
     "editor.wordBasedSuggestionsMode": "allDocuments",
