@@ -261,7 +261,7 @@ let g:UltiSnipsExpandTrigger = "<c-e>"
 let g:user_emmet_leader_key = "<c-l>"
 let g:user_emmet_install_global = 0
 
-autocmd FileType html,xml,vue,typescriptreact EmmetInstall
+autocmd FileType html,xml,vue,typescriptreact,handlebars EmmetInstall
 " }}}
 
 " i3config {{{
@@ -292,6 +292,7 @@ let g:mta_filetypes = {
 	\ 'xhtml' : 1,
 	\ 'xml' : 1,
 	\ 'jinja' : 1,
+	\ 'handlebars': 1,
 	\}
 " }}}
 
