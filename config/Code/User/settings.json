@@ -386,16 +386,16 @@
     "window.zoomLevel": -1,
     "editor.wordBasedSuggestionsMode": "allDocuments",
     "[python]": {
-        "editor.wordBasedSuggestions": true
+        "editor.wordBasedSuggestions": "matchingDocuments"
     },
     "[cpp]": {
-        "editor.wordBasedSuggestions": true
+        "editor.wordBasedSuggestions": "matchingDocuments"
     },
     "[cuda-cpp]": {
-        "editor.wordBasedSuggestions": true
+        "editor.wordBasedSuggestions": "matchingDocuments"
     },
     "[c]": {
-        "editor.wordBasedSuggestions": true
+        "editor.wordBasedSuggestions": "matchingDocuments"
     },
     "editor.lineNumbers": "relative",
     "[c][cpp][cuda-cpp][python]": {
