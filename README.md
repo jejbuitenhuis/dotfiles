@@ -33,6 +33,18 @@ Run this in a terminal to update the extensions list:
 code --list-extensions | grep -Ev "$(find ./vscode/extensions/ -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | tr "\n" "|" | sed "s/|$//")" > vscode/extensions.txt
 ```
 
+# Oh My Zsh plugins
+
+All plugins can be found in the `oh-my-zsh/plugins.txt` folder.
+
+## Update plugins list
+
+Run this in a terminal to update the plugins list:
+
+```bash
+ls ~/.oh-my-zsh/custom/plugins > .dotfiles/oh-my-zsh/plugins.txt
+```
+
 # Enabling Lombok support in coc-java
 
 Download a [Lombok jar](https://projectlombok.org/download) and place it in `~/.config/coc/extensions/node_modules/coc-java/lombok/lombok-X.X.X.jar`.

@@ -1,0 +1,6 @@
+example
+fzf-tab
+nix-shell
+zsh-autosuggestions
+zsh-nvm
+zsh-syntax-highlighting
