@@ -9,6 +9,7 @@
 
 window {
 	children: [ mainbox ];
+	width: 30%;
 }
 
 mainbox {
