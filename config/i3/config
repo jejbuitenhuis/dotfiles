@@ -330,8 +330,8 @@ exec --no-startup-id pulseaudio --start
 # start picom
 exec_always --no-startup-id ~/.config/i3/scripts/picom.sh
 
-# Blue light stuff
-exec --no-startup-id redshift -b 1.0:0.75 -t 6500:3250
+# Blue light stuff (location Utrecht, the Netherlands)
+exec --no-startup-id redshift -b 1.0:0.75 -t 6500:3250 -l 52.090736:5.121420
 
 # set background
 exec_always --no-startup-id feh --bg-fill -no-fehbg ~/Pictures/Wallpapers/$THEME.jpg
