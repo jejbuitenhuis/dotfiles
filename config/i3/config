@@ -42,7 +42,7 @@ set $prg_files_alt nautilus
 set $prg_password rofi-rbw --action autotype --clipboarder xclip --typer xdotool
 set $prg_scratchpad ~/.config/i3/scripts/scratchpad_switcher.sh
 set $prg_screenshot flameshot full -c -p ~/Pictures/
-set $prg_screenshot_alt flameshot gui -p ~/Pictures/
+set $prg_screenshot_alt flameshot gui -c -p ~/Pictures/
 set $prg_screenshot_alt2 flameshot screen -c -p ~/Pictures/
 set $prg_screenshot_alt3 /home/joram/scripts/snipaste
 set $prg_telegram telegram-desktop
